@@ -1,0 +1,489 @@
+{
+  "examples": [
+    {
+      "id": "EXP-0001",
+      "document_content": "Enable Modbus Communication Using Embedded Webpage. Enable/disable Modbus TCP communication using the embedded webpage. Pre-Conditions: Panel Server powered ON, Network connected, Webpage accessible. Steps & Expected Results: Open Communication Settings → Page displayed, Enable Modbus TCP → Enabled successfully, Disable Modbus TCP → Disabled successfully. Final Result: User can enable/disable Modbus TCP without errors.",
+      "test_cases": [
+        {
+          "test_type": "Commissioning",
+          "title": "Enable Modbus Communication Using Embedded Webpage",
+          "method": "Manual Testing",
+          "description": "Enable/disable Modbus TCP communication using the embedded webpage.",
+          "objective": "Verify that Modbus TCP can be enabled and disabled through the embedded web interface",
+          "preconditions": [
+            "Panel Server powered ON",
+            "Network connected",
+            "Webpage accessible"
+          ],
+          "steps": [
+            "Open Communication Settings",
+            "Enable Modbus TCP",
+            "Disable Modbus TCP"
+          ],
+          "expected_results": [
+            "Page displayed",
+            "Enabled successfully",
+            "Disabled successfully"
+          ],
+          "priority": "Critical",
+          "acceptance_criteria": [
+            "User can enable Modbus TCP from webpage",
+            "User can disable Modbus TCP from webpage",
+            "No error messages during enable/disable operations"
+          ],
+          "final_result": "User can enable/disable Modbus TCP without errors"
+        }
+      ],
+      "tags": ["commissioning", "modbus", "communication", "tcp"],
+      "extracted_keywords": {"integration": 3, "workflow": 2},
+      "test_case_count": 1,
+      "created_at": "2024-03-25T10:00:00Z"
+    },
+    {
+      "id": "EXP-0002",
+      "document_content": "Configure Modbus Serial Line (RS-485) Communication Parameters. Configure baud rate, parity, and stop bits. Pre-Conditions: Panel Server ON and connected, Admin access available, RS-485 device connected. Steps: Login to webpage, Navigate to Modbus settings, Set parameters (19200, Even, 1), Save configuration, Verify device discovery. Final Result: RS-485 communication works correctly.",
+      "test_cases": [
+        {
+          "test_type": "Commissioning",
+          "title": "Configure Modbus Serial Line (RS-485) Communication Parameters",
+          "method": "Manual Testing",
+          "description": "Configure baud rate, parity, and stop bits.",
+          "objective": "Verify RS-485 communication parameters can be configured correctly",
+          "preconditions": [
+            "Panel Server ON and connected",
+            "Admin access available",
+            "RS-485 device connected"
+          ],
+          "steps": [
+            "Login to webpage",
+            "Navigate to Modbus settings",
+            "Set parameters (19200, Even, 1)",
+            "Save configuration",
+            "Verify device discovery"
+          ],
+          "expected_results": [
+            "Login successful",
+            "Modbus settings page loads",
+            "Parameters set correctly",
+            "Configuration saved successfully",
+            "RS-485 devices discovered"
+          ],
+          "priority": "Critical",
+          "acceptance_criteria": [
+            "RS-485 parameters configured as specified",
+            "Modbus devices discovered successfully",
+            "Configuration survives device restart"
+          ],
+          "final_result": "RS-485 communication works correctly"
+        }
+      ],
+      "tags": ["commissioning", "modbus", "serial", "rs485", "configuration"],
+      "extracted_keywords": {"integration": 4, "workflow": 3, "database": 2},
+      "test_case_count": 1,
+      "created_at": "2024-03-25T10:05:00Z"
+    },
+    {
+      "id": "EXP-0003",
+      "document_content": "Wireless Device Discovery and Pairing. Discover and pair wireless PowerTag sensors. Steps: Login to webpage, Start device discovery, Select detected device, Pair device, Assign label, Verify real-time data. Final Result: Device paired and data visible.",
+      "test_cases": [
+        {
+          "test_type": "Commissioning",
+          "title": "Wireless Device Discovery and Pairing",
+          "method": "Manual Testing",
+          "description": "Discover and pair wireless PowerTag sensors.",
+          "objective": "Verify wireless devices can be discovered and successfully paired with real-time data visibility",
+          "preconditions": [
+            "Panel Server powered ON",
+            "Wireless functionality enabled",
+            "PowerTag sensors in pairing mode",
+            "Admin user logged in"
+          ],
+          "steps": [
+            "Login to webpage",
+            "Start device discovery",
+            "Select detected device",
+            "Pair device",
+            "Assign label",
+            "Verify real-time data"
+          ],
+          "expected_results": [
+            "Login successful",
+            "Discovery process starts",
+            "Device detected in scan results",
+            "Pairing confirmation received",
+            "Device label assigned",
+            "Real-time data displayed"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Wireless devices can be discovered",
+            "Pairing process completes successfully",
+            "Device visible in real-time monitoring"
+          ],
+          "final_result": "Device paired and data visible"
+        }
+      ],
+      "tags": ["commissioning", "wireless", "integration", "pairing"],
+      "extracted_keywords": {"integration": 5, "workflow": 4, "ui": 2},
+      "test_case_count": 1,
+      "created_at": "2024-03-25T10:10:00Z"
+    },
+    {
+      "id": "EXP-0004",
+      "document_content": "Configure Ethernet Network Settings (Switched Mode). Configure ETH1 & ETH2 in switched mode. Steps: Login, Open Network settings, Select Switched Mode, Assign static IP, Save settings, Verify access. Final Result: Device accessible using new IP.",
+      "test_cases": [
+        {
+          "test_type": "Commissioning",
+          "title": "Configure Ethernet Network Settings (Switched Mode)",
+          "method": "Manual Testing",
+          "description": "Configure ETH1 & ETH2 in switched mode.",
+          "objective": "Verify Ethernet ports can be configured in switched mode with static IP",
+          "preconditions": [
+            "Panel Server powered ON",
+            "Ethernet cables connected to ETH1 and ETH2",
+            "Admin access available"
+          ],
+          "steps": [
+            "Login",
+            "Open Network settings",
+            "Select Switched Mode",
+            "Assign static IP",
+            "Save settings",
+            "Verify access"
+          ],
+          "expected_results": [
+            "Login successful",
+            "Network settings page loads",
+            "Switched Mode selected",
+            "Static IP assigned",
+            "Settings saved successfully",
+            "Device accessible via new IP"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Ethernet switched mode configured",
+            "Device accessible using new IP",
+            "Network settings persist after reboot"
+          ],
+          "final_result": "Device accessible using new IP"
+        }
+      ],
+      "tags": ["commissioning", "ethernet", "network", "configuration"],
+      "extracted_keywords": {"integration": 3, "workflow": 3},
+      "test_case_count": 1,
+      "created_at": "2024-03-25T10:15:00Z"
+    },
+    {
+      "id": "EXP-0005",
+      "document_content": "Assign Virtual Modbus Server ID. Assign unique virtual ID to downstream device. Steps: Discover device, Assign virtual ID (e.g., 10), Save configuration, Test from Modbus client, Check duplicate ID handling. Final Result: Device accessible via assigned ID.",
+      "test_cases": [
+        {
+          "test_type": "Commissioning",
+          "title": "Assign Virtual Modbus Server ID",
+          "method": "Manual Testing",
+          "description": "Assign unique virtual ID to downstream device.",
+          "objective": "Verify virtual Modbus server IDs can be assigned to downstream devices",
+          "preconditions": [
+            "Panel Server powered ON",
+            "Downstream Modbus devices connected",
+            "Admin access available"
+          ],
+          "steps": [
+            "Discover device",
+            "Assign virtual ID (e.g., 10)",
+            "Save configuration",
+            "Test from Modbus client",
+            "Check duplicate ID handling"
+          ],
+          "expected_results": [
+            "Device discovered successfully",
+            "Virtual ID assigned",
+            "Configuration saved",
+            "Device responds to Modbus client via assigned ID",
+            "Duplicate ID error handled"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Virtual ID assigned successfully",
+            "Device accessible via Modbus client",
+            "Duplicate IDs are rejected"
+          ],
+          "final_result": "Device accessible via assigned ID"
+        }
+      ],
+      "tags": ["commissioning", "modbus", "virtual-id", "configuration"],
+      "extracted_keywords": {"integration": 4, "workflow": 3},
+      "test_case_count": 1,
+      "created_at": "2024-03-25T10:20:00Z"
+    },
+    {
+      "id": "EXP-0006",
+      "document_content": "User Account Management. Create users and test account lockout. Steps: Login as admin, Create user, Attempt wrong login multiple times, Verify lockout, Unlock user, Login successfully. Final Result: User management and lockout works.",
+      "test_cases": [
+        {
+          "test_type": "Commissioning",
+          "title": "User Account Management",
+          "method": "Manual Testing",
+          "description": "Create users and test account lockout.",
+          "objective": "Verify user account creation and lockout mechanisms",
+          "preconditions": [
+            "Panel Server powered ON",
+            "Admin credentials available",
+            "Webpage accessible"
+          ],
+          "steps": [
+            "Login as admin",
+            "Create user",
+            "Attempt wrong login multiple times",
+            "Verify lockout",
+            "Unlock user",
+            "Login successfully"
+          ],
+          "expected_results": [
+            "Admin login successful",
+            "User created successfully",
+            "Wrong login attempts rejected",
+            "Account locked after max attempts",
+            "User unlocked by admin",
+            "User can login after unlock"
+          ],
+          "priority": "Critical",
+          "acceptance_criteria": [
+            "Users can be created",
+            "Account lockout triggers after failed attempts",
+            "Admin can unlock accounts",
+            "User management and lockout works"
+          ],
+          "final_result": "User management and lockout works"
+        }
+      ],
+      "tags": ["commissioning", "security", "user-management", "lockout"],
+      "extracted_keywords": {"security": 5, "workflow": 4, "ui": 2},
+      "test_case_count": 1,
+      "created_at": "2024-03-25T10:25:00Z"
+    },
+    {
+      "id": "EXP-0007",
+      "document_content": "Firmware Update via EPC Software. Update firmware using EPC software. Steps: Open EPC software, Detect Panel Server, Select firmware file, Start update, Wait for reboot, Verify new version. Final Result: Firmware updated successfully.",
+      "test_cases": [
+        {
+          "test_type": "Commissioning",
+          "title": "Firmware Update via EPC Software",
+          "method": "Manual Testing",
+          "description": "Update firmware using EPC software.",
+          "objective": "Verify firmware can be updated through EPC software",
+          "preconditions": [
+            "EPC software installed",
+            "Panel Server connected and detected",
+            "Firmware file available",
+            "Stable network connection"
+          ],
+          "steps": [
+            "Open EPC software",
+            "Detect Panel Server",
+            "Select firmware file",
+            "Start update",
+            "Wait for reboot",
+            "Verify new version"
+          ],
+          "expected_results": [
+            "EPC software opens",
+            "Panel Server detected",
+            "Firmware file selected",
+            "Update starts without errors",
+            "Device reboots successfully",
+            "New firmware version displayed"
+          ],
+          "priority": "Critical",
+          "acceptance_criteria": [
+            "Firmware update completes without errors",
+            "Device reboots and functions normally",
+            "New version is confirmed"
+          ],
+          "final_result": "Firmware updated successfully"
+        }
+      ],
+      "tags": ["commissioning", "firmware", "update", "epc"],
+      "extracted_keywords": {"integration": 3, "workflow": 4},
+      "test_case_count": 1,
+      "created_at": "2024-03-25T10:30:00Z"
+    },
+    {
+      "id": "EXP-0008",
+      "document_content": "Configure Data Publication to Cloud. Send energy data to EcoStruxure Energy Hub. Steps: Open Data Publication settings, Select cloud service, Enter API details, Set interval, Save settings, Verify cloud data. Final Result: Data visible in cloud dashboard.",
+      "test_cases": [
+        {
+          "test_type": "Commissioning",
+          "title": "Configure Data Publication to Cloud",
+          "method": "Manual Testing",
+          "description": "Send energy data to EcoStruxure Energy Hub.",
+          "objective": "Verify energy data can be published to the cloud dashboard",
+          "preconditions": [
+            "Panel Server powered ON",
+            "Internet connection available",
+            "EcoStruxure Energy Hub account configured",
+            "Energy meters connected and reporting data"
+          ],
+          "steps": [
+            "Open Data Publication settings",
+            "Select cloud service",
+            "Enter API details",
+            "Set interval",
+            "Save settings",
+            "Verify cloud data"
+          ],
+          "expected_results": [
+            "Data Publication settings page loads",
+            "Cloud service selected",
+            "API details entered",
+            "Interval set correctly",
+            "Settings saved",
+            "Data visible in cloud dashboard"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Cloud publication configured",
+            "Data appears in EcoStruxure dashboard",
+            "Publication interval works correctly"
+          ],
+          "final_result": "Data visible in cloud dashboard"
+        }
+      ],
+      "tags": ["commissioning", "cloud", "publication", "ecostruxure"],
+      "extracted_keywords": {"integration": 5, "workflow": 3, "database": 2},
+      "test_case_count": 1,
+      "created_at": "2024-03-25T10:35:00Z"
+    },
+    {
+      "id": "EXP-0009",
+      "document_content": "Configure Overload Alarm. Enable overload alarm on energy meter. Steps: Open meter settings, Enable alarm, Set threshold (5000 W), Apply load > threshold, Verify alarm, Reduce load. Final Result: Alarm triggers and clears correctly.",
+      "test_cases": [
+        {
+          "test_type": "Commissioning",
+          "title": "Configure Overload Alarm",
+          "method": "Manual Testing",
+          "description": "Enable overload alarm on energy meter.",
+          "objective": "Verify overload alarms can be configured and trigger correctly",
+          "preconditions": [
+            "Panel Server powered ON",
+            "Energy meter connected",
+            "Admin access available",
+            "Load source available for testing"
+          ],
+          "steps": [
+            "Open meter settings",
+            "Enable alarm",
+            "Set threshold (5000 W)",
+            "Apply load > threshold",
+            "Verify alarm",
+            "Reduce load"
+          ],
+          "expected_results": [
+            "Meter settings page loads",
+            "Alarm enabled",
+            "Threshold set to 5000 W",
+            "Load applied above threshold",
+            "Alarm triggered",
+            "Alarm cleared after load reduction"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Overload alarm configurable",
+            "Alarm triggers at correct threshold",
+            "Alarm clears when load drops below threshold"
+          ],
+          "final_result": "Alarm triggers and clears correctly"
+        }
+      ],
+      "tags": ["commissioning", "alarm", "overload", "energy-meter"],
+      "extracted_keywords": {"integration": 3, "workflow": 3, "performance": 2},
+      "test_case_count": 1,
+      "created_at": "2024-03-25T10:40:00Z"
+    },
+    {
+      "id": "EXP-0010",
+      "document_content": "Configure Modbus TCP/IP Filtering. Restrict Modbus access to authorized IPs. Steps: Enable IP filtering, Add allowed IP, Save settings, Test authorized access, Test unauthorized access, Disable filtering. Final Result: Authorized access allowed, others blocked.",
+      "test_cases": [
+        {
+          "test_type": "Commissioning",
+          "title": "Configure Modbus TCP/IP Filtering",
+          "method": "Manual Testing",
+          "description": "Restrict Modbus access to authorized IPs.",
+          "objective": "Verify Modbus TCP/IP filtering restricts access to authorized IPs only",
+          "preconditions": [
+            "Panel Server powered ON",
+            "Modbus TCP enabled",
+            "Multiple test clients available",
+            "Admin access available"
+          ],
+          "steps": [
+            "Enable IP filtering",
+            "Add allowed IP",
+            "Save settings",
+            "Test authorized access",
+            "Test unauthorized access",
+            "Disable filtering"
+          ],
+          "expected_results": [
+            "IP filtering enabled",
+            "Allowed IP added to list",
+            "Settings saved",
+            "Authorized IP can access Modbus",
+            "Unauthorized IP blocked",
+            "Filtering disabled, all IPs can access"
+          ],
+          "priority": "Critical",
+          "acceptance_criteria": [
+            "IP filtering restricts Modbus access",
+            "Authorized IPs can communicate",
+            "Unauthorized IPs are blocked"
+          ],
+          "final_result": "Authorized access allowed, others blocked"
+        }
+      ],
+      "tags": ["commissioning", "security", "modbus", "ip-filtering"],
+      "extracted_keywords": {"security": 5, "integration": 4, "workflow": 3},
+      "test_case_count": 1,
+      "created_at": "2024-03-25T10:45:00Z"
+    }
+  ],
+  "learned_patterns": [
+    {
+      "category": "integration",
+      "test_case_types": {"Commissioning": 10},
+      "frequency": 10,
+      "examples": ["EXP-0001", "EXP-0002", "EXP-0003", "EXP-0004", "EXP-0005", "EXP-0006", "EXP-0007", "EXP-0008", "EXP-0009", "EXP-0010"]
+    },
+    {
+      "category": "workflow",
+      "test_case_types": {"Commissioning": 10},
+      "frequency": 10,
+      "examples": ["EXP-0001", "EXP-0002", "EXP-0003", "EXP-0004", "EXP-0005", "EXP-0006", "EXP-0007", "EXP-0008", "EXP-0009", "EXP-0010"]
+    },
+    {
+      "category": "security",
+      "test_case_types": {"Commissioning": 2},
+      "frequency": 2,
+      "examples": ["EXP-0006", "EXP-0010"]
+    },
+    {
+      "category": "database",
+      "test_case_types": {"Commissioning": 2},
+      "frequency": 2,
+      "examples": ["EXP-0002", "EXP-0008"]
+    },
+    {
+      "category": "ui",
+      "test_case_types": {"Commissioning": 2},
+      "frequency": 2,
+      "examples": ["EXP-0003", "EXP-0006"]
+    },
+    {
+      "category": "performance",
+      "test_case_types": {"Commissioning": 1},
+      "frequency": 1,
+      "examples": ["EXP-0009"]
+    }
+  ],
+  "last_updated": "2024-03-25T10:45:00Z"
+}
