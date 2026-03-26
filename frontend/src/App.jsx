@@ -4,13 +4,11 @@ import DocumentUpload from './components/DocumentUpload'
 import TestCaseDisplay from './components/TestCaseDisplay'
 
 function App() {
-  const [documentContent, setDocumentContent] = useState('')
   const [testCases, setTestCases] = useState([])
   const [loading, setLoading] = useState(false)
   const [activeTab, setActiveTab] = useState('upload')
 
-  const handleGenerateTestCases = async (content) => {
-    setDocumentContent(content)
+  const handleGenerateTestCases = async (content, prompt = null) => {
     setLoading(true)
     try {
       const response = await fetch('/api/test-cases/generate', {
@@ -20,6 +18,7 @@ function App() {
         },
         body: JSON.stringify({
           document_content: content,
+          user_prompt: prompt,
           detail_level: 'Detailed',
           num_test_cases: 15
         })

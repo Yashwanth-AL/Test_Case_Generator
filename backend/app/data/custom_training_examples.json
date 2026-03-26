@@ -2,7 +2,7 @@
   "examples": [
     {
       "id": "EXP-0001",
-      "document_content": "Enable Modbus Communication Using Embedded Webpage. Enable/disable Modbus TCP communication using the embedded webpage. Pre-Conditions: Panel Server powered ON, Network connected, Webpage accessible. Steps & Expected Results: Open Communication Settings → Page displayed, Enable Modbus TCP → Enabled successfully, Disable Modbus TCP → Disabled successfully. Final Result: User can enable/disable Modbus TCP without errors.",
+      "document_content": "Enable Modbus Communication Using Embedded Webpage. Enable/disable Modbus TCP communication using the embedded webpage. Pre-Conditions: Panel Server powered ON, Network connected, Webpage accessible. Steps & Expected Results: Open Communication Settings \u00e2\u2020\u2019 Page displayed, Enable Modbus TCP \u00e2\u2020\u2019 Enabled successfully, Disable Modbus TCP \u00e2\u2020\u2019 Disabled successfully. Final Result: User can enable/disable Modbus TCP without errors.",
       "test_cases": [
         {
           "test_type": "Commissioning",
@@ -34,8 +34,16 @@
           "final_result": "User can enable/disable Modbus TCP without errors"
         }
       ],
-      "tags": ["commissioning", "modbus", "communication", "tcp"],
-      "extracted_keywords": {"integration": 3, "workflow": 2},
+      "tags": [
+        "commissioning",
+        "modbus",
+        "communication",
+        "tcp"
+      ],
+      "extracted_keywords": {
+        "integration": 3,
+        "workflow": 2
+      },
       "test_case_count": 1,
       "created_at": "2024-03-25T10:00:00Z"
     },
@@ -77,8 +85,18 @@
           "final_result": "RS-485 communication works correctly"
         }
       ],
-      "tags": ["commissioning", "modbus", "serial", "rs485", "configuration"],
-      "extracted_keywords": {"integration": 4, "workflow": 3, "database": 2},
+      "tags": [
+        "commissioning",
+        "modbus",
+        "serial",
+        "rs485",
+        "configuration"
+      ],
+      "extracted_keywords": {
+        "integration": 4,
+        "workflow": 3,
+        "database": 2
+      },
       "test_case_count": 1,
       "created_at": "2024-03-25T10:05:00Z"
     },
@@ -123,8 +141,17 @@
           "final_result": "Device paired and data visible"
         }
       ],
-      "tags": ["commissioning", "wireless", "integration", "pairing"],
-      "extracted_keywords": {"integration": 5, "workflow": 4, "ui": 2},
+      "tags": [
+        "commissioning",
+        "wireless",
+        "integration",
+        "pairing"
+      ],
+      "extracted_keywords": {
+        "integration": 5,
+        "workflow": 4,
+        "ui": 2
+      },
       "test_case_count": 1,
       "created_at": "2024-03-25T10:10:00Z"
     },
@@ -168,8 +195,16 @@
           "final_result": "Device accessible using new IP"
         }
       ],
-      "tags": ["commissioning", "ethernet", "network", "configuration"],
-      "extracted_keywords": {"integration": 3, "workflow": 3},
+      "tags": [
+        "commissioning",
+        "ethernet",
+        "network",
+        "configuration"
+      ],
+      "extracted_keywords": {
+        "integration": 3,
+        "workflow": 3
+      },
       "test_case_count": 1,
       "created_at": "2024-03-25T10:15:00Z"
     },
@@ -211,8 +246,16 @@
           "final_result": "Device accessible via assigned ID"
         }
       ],
-      "tags": ["commissioning", "modbus", "virtual-id", "configuration"],
-      "extracted_keywords": {"integration": 4, "workflow": 3},
+      "tags": [
+        "commissioning",
+        "modbus",
+        "virtual-id",
+        "configuration"
+      ],
+      "extracted_keywords": {
+        "integration": 4,
+        "workflow": 3
+      },
       "test_case_count": 1,
       "created_at": "2024-03-25T10:20:00Z"
     },
@@ -257,8 +300,17 @@
           "final_result": "User management and lockout works"
         }
       ],
-      "tags": ["commissioning", "security", "user-management", "lockout"],
-      "extracted_keywords": {"security": 5, "workflow": 4, "ui": 2},
+      "tags": [
+        "commissioning",
+        "security",
+        "user-management",
+        "lockout"
+      ],
+      "extracted_keywords": {
+        "security": 5,
+        "workflow": 4,
+        "ui": 2
+      },
       "test_case_count": 1,
       "created_at": "2024-03-25T10:25:00Z"
     },
@@ -303,8 +355,16 @@
           "final_result": "Firmware updated successfully"
         }
       ],
-      "tags": ["commissioning", "firmware", "update", "epc"],
-      "extracted_keywords": {"integration": 3, "workflow": 4},
+      "tags": [
+        "commissioning",
+        "firmware",
+        "update",
+        "epc"
+      ],
+      "extracted_keywords": {
+        "integration": 3,
+        "workflow": 4
+      },
       "test_case_count": 1,
       "created_at": "2024-03-25T10:30:00Z"
     },
@@ -349,8 +409,17 @@
           "final_result": "Data visible in cloud dashboard"
         }
       ],
-      "tags": ["commissioning", "cloud", "publication", "ecostruxure"],
-      "extracted_keywords": {"integration": 5, "workflow": 3, "database": 2},
+      "tags": [
+        "commissioning",
+        "cloud",
+        "publication",
+        "ecostruxure"
+      ],
+      "extracted_keywords": {
+        "integration": 5,
+        "workflow": 3,
+        "database": 2
+      },
       "test_case_count": 1,
       "created_at": "2024-03-25T10:35:00Z"
     },
@@ -395,8 +464,17 @@
           "final_result": "Alarm triggers and clears correctly"
         }
       ],
-      "tags": ["commissioning", "alarm", "overload", "energy-meter"],
-      "extracted_keywords": {"integration": 3, "workflow": 3, "performance": 2},
+      "tags": [
+        "commissioning",
+        "alarm",
+        "overload",
+        "energy-meter"
+      ],
+      "extracted_keywords": {
+        "integration": 3,
+        "workflow": 3,
+        "performance": 2
+      },
       "test_case_count": 1,
       "created_at": "2024-03-25T10:40:00Z"
     },
@@ -441,49 +519,290 @@
           "final_result": "Authorized access allowed, others blocked"
         }
       ],
-      "tags": ["commissioning", "security", "modbus", "ip-filtering"],
-      "extracted_keywords": {"security": 5, "integration": 4, "workflow": 3},
+      "tags": [
+        "commissioning",
+        "security",
+        "modbus",
+        "ip-filtering"
+      ],
+      "extracted_keywords": {
+        "security": 5,
+        "integration": 4,
+        "workflow": 3
+      },
       "test_case_count": 1,
       "created_at": "2024-03-25T10:45:00Z"
+    },
+    {
+      "id": "EXP-0011",
+      "document_content": "EcoStruxure Power Commission software performs Easy setup and Advanced testing actions.",
+      "test_cases": [
+        {
+          "id": "EcoStruxure Power Commission software perf-ATC-001",
+          "test_type": "Commissioning",
+          "title": "EcoStruxure Power Commission software performs Easy setup and Advanced testing",
+          "method": "Manual Testing",
+          "description": "EcoStruxure Power Commission software performs Easy setup and Advanced testing actions.",
+          "objective": "Validate EcoStruxure Power Commission software performs Easy setup and Advanced testing according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: EcoStruxure Power Commission software performs Easy setup and Advanced testing actions"
+          ],
+          "expected_results": [
+            "Step completed: Validate: EcoStruxure Power Commission software perform"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Validate: EcoStruxure Power Commission software perform",
+            "All verifications passed for: EcoStruxure Power Commission software performs Easy setup and Advanced testing"
+          ],
+          "final_result": "All verifications passed for: EcoStruxure Power Commission software performs Easy setup and Advanced testing"
+        }
+      ],
+      "tags": [
+        "auto_training",
+        "generation",
+        "prompted"
+      ],
+      "extracted_keywords": {
+        "ui": 1
+      },
+      "test_case_count": 1,
+      "created_at": "2026-03-26T15:44:27.509582"
+    },
+    {
+      "id": "EXP-0012",
+      "document_content": "EcoStruxure Panel Server Webpages Overview\nThe web server embedded in the EcoStruxure Panel Server provides webpages\nenabling you to commission electrical products and systems compatible with the\nEcoStruxure Panel Server in your switchboard.\nIn addition the webpages provide real-time data and active alarm visualization,\nand historical analysis from devices (depending on the model), for entry-level\nenergy and operation management.\nElectrical product and commissioning capabilities allow you to:\n\u2022 Discover wireless devices installed in the EcoStruxure Panel Server system\n(depending on the model).\n\u2022 Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel\nServer (depending on the model).\n\u2022 Configure I/O devices connected to the EcoStruxure Panel Server through\nthe digital inputs (depending on the model).\nEnergy and operation monitoring capabilities allow you to:\n\u2022 Visualize real-time data and events through a supported web browser.\n\u2022 Monitor and control connected devices.\n\u2022 Publish data to an SFTP or HTTPS server or to the Schneider Electric cloud.\n\u2022 Visualize trending on historical data, up to a period of 3 years (Advanced\nmodel).\n\u2022 Export selected logged data to your PC for additional analysis (Advanced\nmodel).\nFor more detailed information about the webpages, refer to Using EcoStruxure\nPanel Server Webpages, page 190.\nDOCA0172EN-19 33\nEcoStruxure Panel Server Webpages Overview EcoStruxure Panel Server\nEcoStruxure Power Commission (EPC) Software\nOverview\nEcoStruxure Power Commission is intelligent software that helps you set up, test,\nand commission the electrical products and systems in your switchboards with\nefficiency and ease. It also allows you to generate a dedicated QR code for the\nelectrical panel to enable digital collaboration with contractors and facility\nmanagers by sharing important documentation.\nKey Features\nEcoStruxure Power Commission software performs the following actions for the\nsupported devices :\n\u2022 Easy setup\n\u25e6 Discover all the smart d",
+      "test_cases": [
+        {
+          "id": "Panel Server-ATC-001",
+          "test_type": "Commissioning",
+          "title": "Giving access to cloud connected gateways and devices to associate",
+          "method": "Manual Testing",
+          "description": "Giving access to cloud connected gateways and devices to associate required models. A custom device model in the EcoStruxure Power Commission Web tool contains the list of measurements, alarms, Modbus frames and events that can be used to monitor Modbus based devices in the field. The user can create, edit, view, and export device model data as per the requirement.",
+          "objective": "Validate Giving access to cloud connected gateways and devices to associate according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: Giving access to cloud connected gateways and devices to associate required models",
+            "Validate: A custom device model in the EcoStruxure Power Commission Web tool contains the list of measurements, alarms, Modbus frames and events that can be used to monitor Modbus based devices in the field",
+            "Validate: The user can create, edit, view, and export device model data as per the requirement",
+            "Verify that key Features The EcoStruxure Power Commission Web tool allows you to perform the following actions:"
+          ],
+          "expected_results": [
+            "Connection re-established successfully",
+            "Step completed: Validate: A custom device model in the EcoStruxure Powe",
+            "Step completed: Validate: The user can create, edit, view, and export d",
+            "Key Features The EcoStruxure Power Commission Web tool allows you to perform the following actions: confirmed as expected"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Connection re-established successfully",
+            "Step completed: Validate: A custom device model in the EcoStruxure Powe",
+            "Step completed: Validate: The user can create, edit, view, and export d",
+            "Key Features The EcoStruxure Power Commission Web tool allows you to perform the following actions: confirmed as expected",
+            "All verifications passed for: Giving access to cloud connected gateways and devices to associate"
+          ],
+          "final_result": "All verifications passed for: Giving access to cloud connected gateways and devices to associate"
+        },
+        {
+          "id": "Panel Server-ATC-002",
+          "test_type": "Commissioning",
+          "title": "View and Export Models: Select and export device models previously created",
+          "method": "Manual Testing",
+          "description": "View and Export Models: Select and export device models previously created by you or others so that they can be imported in EcoStruxure Panel Server. EcoStruxure Power Monitoring Expert is a complete, interoperable, and scalable software package for power management applications. The software collects and organizes data gathered from the electrical network and presents it as meaningful, actionable information through an intuitive Web interface.",
+          "objective": "Validate View and Export Models: Select and export device models previously created according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: View and Export Models: Select and export device models previously created by you or others so that they can be imported in EcoStruxure Panel Server",
+            "Validate: Detailed help and instructions for creating a device model are available in the EcoStruxure Power Commission Web tool at Help > Documentation",
+            "Verify that for more information, go to EcoStruxure Power Commission Web. 35 EcoStruxure Power Commission Web Tool (EPC Web) EcoStruxure Panel Server Edge Monitoring and Supervision Software EcoStruxure Power Monitoring Expert (PME) EcoStruxure Panel Server allows you to export the panel configuration (list of devices and communication addresses) into PME or EPO by using EcoStruxure Power Commission software, for setup efficiency",
+            "Validate: EcoStruxure Power Monitoring Expert is a complete, interoperable, and scalable software package for power management applications",
+            "Validate: The software collects and organizes data gathered from the electrical network and presents it as meaningful, actionable information through an intuitive Web interface",
+            "Verify that it allows you to share information with key stakeholders or across your entire operation to influence behavioral changes that can save you money",
+            "Verify that with rich data integration from connected devices, EcoStruxure Power Operation unique capabilities provide real-time situational awareness and offer a high-performance, cyber\u0002resilient solution for your specialized power network"
+          ],
+          "expected_results": [
+            "Step completed: Validate: View and Export Models: Select and export dev",
+            "Step completed: Validate: Detailed help and instructions for creating a",
+            "For more information, go to EcoStruxure Power Commission Web. 35 EcoStruxure Power Commission Web Tool (EPC Web) EcoStruxure Panel Server Edge Monitoring and Supervision Software EcoStruxure Power Monitoring Expert (PME) EcoStruxure Panel Server allows you to export the panel configuration (list of devices and communication addresses) into PME or EPO by using EcoStruxure Power Commission software, for setup efficiency confirmed as expected",
+            "Step completed: Validate: EcoStruxure Power Monitoring Expert is a comp",
+            "Step completed: Validate: The software collects and organizes data gath",
+            "It allows you to share information with key stakeholders or across your entire operation to influence behavioral changes that can save you money confirmed as expected"
+          ],
+          "priority": "Critical",
+          "acceptance_criteria": [
+            "Step completed: Validate: View and Export Models: Select and export dev",
+            "Step completed: Validate: Detailed help and instructions for creating a",
+            "For more information, go to EcoStruxure Power Commission Web. 35 EcoStruxure Power Commission Web Tool (EPC Web) EcoStruxure Panel Server Edge Monitoring and Supervision Software EcoStruxure Power Monitoring Expert (PME) EcoStruxure Panel Server allows you to export the panel configuration (list of devices and communication addresses) into PME or EPO by using EcoStruxure Power Commission software, for setup efficiency confirmed as expected",
+            "Step completed: Validate: EcoStruxure Power Monitoring Expert is a comp",
+            "All verifications passed for: View and Export Models: Select and export device models previously created"
+          ],
+          "final_result": "All verifications passed for: View and Export Models: Select and export device models previously created"
+        },
+        {
+          "id": "Panel Server-ATC-003",
+          "test_type": "Commissioning",
+          "title": "Digital collaboration",
+          "method": "Manual Testing",
+          "description": "Digital collaboration Create a unique QR code for the entire switchboard and then upload all relevant documentation including important CAD drawings, user guides, bill of materials, single-line diagrams, photos and more to Schneider Electric cloud repository. Simplify project handover with the digit",
+          "objective": "Validate Digital collaboration according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: Digital collaboration Create a unique QR code for the entire switchboard and then upload all relevant documentation including important CAD drawings, user guides, bill of materials, single-line diagrams, photos and more to Schneider Electric cloud repository",
+            "Validate: Simplify project handover with the digital logbook functionality, making it faster and easier for the facility manager to access historical information and collaborate with all project partners For more information, tutorials, and download link, visit the EcoStruxure Power Commission software webpage. 34 EcoStruxure Panel Server EcoStruxure Power Commission (EPC) Software EcoStruxure Power Commission Web Tool (EPC Web) Overview The EcoStruxure Power Commission Web tool is intended to help system integrators save time to execute their projects by offering the following actions so that you can cater to different customer requirements in terms of events or measurements of devices to be monitored:"
+          ],
+          "expected_results": [
+            "Step completed: Validate: Digital collaboration Create a unique QR code",
+            "Target page/screen is displayed"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Validate: Digital collaboration Create a unique QR code",
+            "Target page/screen is displayed",
+            "All verifications passed for: Digital collaboration"
+          ],
+          "final_result": "All verifications passed for: Digital collaboration"
+        },
+        {
+          "id": "Panel Server-ATC-004",
+          "test_type": "Commissioning",
+          "title": "Export selected logged data to your PC for additional analysis (Advanced",
+          "method": "Manual Testing",
+          "description": "Export selected logged data to your PC for additional analysis (Advanced model). Key Features EcoStruxure Power Commission software performs the following actions for the supported devices :",
+          "objective": "Validate Export selected logged data to your PC for additional analysis (Advanced according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: Export selected logged data to your PC for additional analysis (Advanced model)",
+            "Validate: For more detailed information about the webpages, refer to Using EcoStruxure Panel Server Webpages, . 33 EcoStruxure Panel Server Webpages Overview EcoStruxure Panel Server EcoStruxure Power Commission (EPC) Software Overview EcoStruxure Power Commission is intelligent software that helps you set up, test, and commission the electrical products and systems in your switchboards with efficiency and ease",
+            "Verify that it also allows you to generate a dedicated QR code for the electrical panel to enable digital collaboration with contractors and facility managers by sharing important documentation",
+            "Validate: Key Features EcoStruxure Power Commission software performs the following actions for the supported devices :"
+          ],
+          "expected_results": [
+            "Step completed: Validate: Export selected logged data to your PC for ad",
+            "Configuration applied correctly",
+            "It also allows you to generate a dedicated QR code for the electrical panel to enable digital collaboration with contractors and facility managers by sharing important documentation confirmed as expected",
+            "Step completed: Validate: Key Features EcoStruxure Power Commission sof"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Validate: Export selected logged data to your PC for ad",
+            "Configuration applied correctly",
+            "It also allows you to generate a dedicated QR code for the electrical panel to enable digital collaboration with contractors and facility managers by sharing important documentation confirmed as expected",
+            "Step completed: Validate: Key Features EcoStruxure Power Commission sof",
+            "All verifications passed for: Export selected logged data to your PC for additional analysis (Advanced"
+          ],
+          "final_result": "All verifications passed for: Export selected logged data to your PC for additional analysis (Advanced"
+        }
+      ],
+      "tags": [
+        "auto_training",
+        "generation",
+        "prompted"
+      ],
+      "extracted_keywords": {
+        "api": 1,
+        "database": 5,
+        "ui": 2
+      },
+      "test_case_count": 4,
+      "created_at": "2026-03-26T15:49:09.797810"
     }
   ],
   "learned_patterns": [
     {
       "category": "integration",
-      "test_case_types": {"Commissioning": 10},
+      "test_case_types": {
+        "Commissioning": 10
+      },
       "frequency": 10,
-      "examples": ["EXP-0001", "EXP-0002", "EXP-0003", "EXP-0004", "EXP-0005", "EXP-0006", "EXP-0007", "EXP-0008", "EXP-0009", "EXP-0010"]
+      "examples": [
+        "EXP-0001",
+        "EXP-0002",
+        "EXP-0003",
+        "EXP-0004",
+        "EXP-0005",
+        "EXP-0006",
+        "EXP-0007",
+        "EXP-0008",
+        "EXP-0009",
+        "EXP-0010"
+      ]
     },
     {
       "category": "workflow",
-      "test_case_types": {"Commissioning": 10},
+      "test_case_types": {
+        "Commissioning": 10
+      },
       "frequency": 10,
-      "examples": ["EXP-0001", "EXP-0002", "EXP-0003", "EXP-0004", "EXP-0005", "EXP-0006", "EXP-0007", "EXP-0008", "EXP-0009", "EXP-0010"]
+      "examples": [
+        "EXP-0001",
+        "EXP-0002",
+        "EXP-0003",
+        "EXP-0004",
+        "EXP-0005",
+        "EXP-0006",
+        "EXP-0007",
+        "EXP-0008",
+        "EXP-0009",
+        "EXP-0010"
+      ]
     },
     {
       "category": "security",
-      "test_case_types": {"Commissioning": 2},
+      "test_case_types": {
+        "Commissioning": 2
+      },
       "frequency": 2,
-      "examples": ["EXP-0006", "EXP-0010"]
+      "examples": [
+        "EXP-0006",
+        "EXP-0010"
+      ]
     },
     {
       "category": "database",
-      "test_case_types": {"Commissioning": 2},
-      "frequency": 2,
-      "examples": ["EXP-0002", "EXP-0008"]
+      "test_case_types": {
+        "Commissioning": 6
+      },
+      "frequency": 3,
+      "examples": [
+        "EXP-0002",
+        "EXP-0008",
+        "EXP-0012"
+      ]
     },
     {
       "category": "ui",
-      "test_case_types": {"Commissioning": 2},
-      "frequency": 2,
-      "examples": ["EXP-0003", "EXP-0006"]
+      "test_case_types": {
+        "Commissioning": 7
+      },
+      "frequency": 4,
+      "examples": [
+        "EXP-0003",
+        "EXP-0006",
+        "EXP-0011",
+        "EXP-0012"
+      ]
     },
     {
       "category": "performance",
-      "test_case_types": {"Commissioning": 1},
+      "test_case_types": {
+        "Commissioning": 1
+      },
       "frequency": 1,
-      "examples": ["EXP-0009"]
+      "examples": [
+        "EXP-0009"
+      ]
+    },
+    {
+      "category": "api",
+      "test_case_types": {
+        "Commissioning": 4
+      },
+      "frequency": 1,
+      "examples": [
+        "EXP-0012"
+      ]
     }
   ],
-  "last_updated": "2024-03-25T10:45:00Z"
+  "last_updated": "2026-03-26T15:49:09.797810"
 }
