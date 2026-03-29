@@ -42,16 +42,26 @@ class TestCaseGenerator:
         domain = analysis.get("domain", "general")
         product_name = analysis.get("product_name", "")
         learned_context_words = set()
+        trainer_boost_terms = set()
 
         if user_prompt and user_prompt.strip():
             learned_context_words = self._learned_terms_for_prompt(user_prompt)
+            trainer_boost_terms = set(self.custom_trainer.get_prompt_boost_terms(user_prompt))
+            relevant_chunks = self._rerank_relevant_chunks(
+                relevant_chunks,
+                user_prompt,
+                learned_context_words,
+                trainer_boost_terms,
+            )
             relevant_chunks = [
                 (chunk, score)
                 for chunk, score in relevant_chunks
                 if self._is_prompt_relevant(chunk, user_prompt, score, learned_context_words)
             ]
 
-        default_test_type = self._determine_test_type(domain, test_types)
+        extracted_keywords = self.custom_trainer.extract_keywords(document_content)
+        recommendations = self.custom_trainer.get_recommendations(extracted_keywords)
+        default_test_type = self._determine_test_type(domain, test_types, recommendations)
 
         test_cases: List[TestCase] = []
         base_id = 1
@@ -102,6 +112,7 @@ class TestCaseGenerator:
             return None
 
         title = self._clean_title(title_raw)
+        title = self._pick_prompt_focused_title(title, body, user_prompt)
         tc_id = (
             f"{product_name}-{id_prefix}-{base_id + index:03d}"
             if product_name
@@ -440,10 +451,17 @@ class TestCaseGenerator:
     # ── test type ──────────────────────────────────────────────────────────────
 
     def _determine_test_type(
-        self, domain: str, test_types: Optional[List[str]]
+        self,
+        domain: str,
+        test_types: Optional[List[str]],
+        recommendations: Optional[Dict] = None,
     ) -> str:
         if test_types and len(test_types) > 0:
             return test_types[0]
+        if recommendations and recommendations.get("confidence", 0) >= 0.35:
+            predicted = recommendations.get("test_types", {})
+            if predicted:
+                return max(predicted, key=predicted.get)
         domain_map = {
             "commissioning": "Commissioning",
             "api_testing": "API Testing",
@@ -455,6 +473,48 @@ class TestCaseGenerator:
             "firmware": "Firmware Testing",
         }
         return domain_map.get(domain, "Functional Testing")
+
+    def _rerank_relevant_chunks(
+        self,
+        relevant_chunks: List[Tuple[Dict, float]],
+        prompt: str,
+        learned_context_words: set,
+        trainer_boost_terms: set,
+    ) -> List[Tuple[Dict, float]]:
+        """Apply trainer-informed reranking on top of semantic analyzer scores."""
+        if not relevant_chunks:
+            return []
+
+        prompt_tokens = {
+            t for t in re.findall(r"[a-z0-9\-]{3,}", prompt.lower())
+            if t not in {"test", "tests", "testcase", "testcases", "generate", "case", "cases"}
+        }
+
+        rescored: List[Tuple[Dict, float]] = []
+        for chunk, score in relevant_chunks:
+            title = self._normalize_text(chunk.get("title", "")).lower()
+            body = self._normalize_text(chunk.get("body", "")).lower()
+            full = f"{title} {body}".strip()
+
+            title_hits = sum(1 for t in prompt_tokens if t in title)
+            body_hits = sum(1 for t in prompt_tokens if t in body)
+            learned_hits = sum(1 for t in learned_context_words if t in full)
+            trainer_hits = sum(1 for t in trainer_boost_terms if t in full)
+
+            # Title/heading hits are more important than body hits.
+            lexical_boost = (title_hits * 0.16) + (body_hits * 0.06)
+            learned_boost = min(0.18, learned_hits * 0.01)
+            trainer_boost = min(0.22, trainer_hits * 0.01)
+
+            # Use chunk structural weight from NLP analyzer metadata.
+            structural_weight = float(chunk.get("weight", 1.0))
+            structural_boost = min((structural_weight - 1.0) * 0.08, 0.22)
+
+            final_score = min(score + lexical_boost + learned_boost + trainer_boost + structural_boost, 1.0)
+            rescored.append((chunk, final_score))
+
+        rescored.sort(key=lambda x: x[1], reverse=True)
+        return rescored
 
     # ── detail level ──────────────────────────────────────────────────────────
 
@@ -505,6 +565,40 @@ class TestCaseGenerator:
         cleaned = re.sub(r"(\w)-\s+(\w)", r"\1\2", cleaned)
         cleaned = re.sub(r"\s+", " ", cleaned).strip()
         return cleaned
+
+    def _pick_prompt_focused_title(
+        self,
+        title: str,
+        body: str,
+        user_prompt: Optional[str],
+    ) -> str:
+        """Prefer a heading/subheading from chunk body that best matches prompt."""
+        if not user_prompt or not body:
+            return title
+
+        prompt_tokens = {
+            t for t in re.findall(r"[a-z0-9\-]{3,}", user_prompt.lower())
+            if t not in {"test", "tests", "testcase", "testcases", "generate", "case", "cases"}
+        }
+        if not prompt_tokens:
+            return title
+
+        candidates = []
+        for line in body.split("\n"):
+            clean = self._clean_title(self._normalize_text(line))
+            if len(clean) < 6 or len(clean) > 120:
+                continue
+            hits = sum(1 for t in prompt_tokens if t in clean.lower())
+            if hits > 0:
+                # Prefer concise heading-like lines.
+                heading_bonus = 1 if len(clean.split()) <= 10 else 0
+                candidates.append((hits + heading_bonus, clean))
+
+        if not candidates:
+            return title
+
+        candidates.sort(key=lambda x: x[0], reverse=True)
+        return candidates[0][1]
 
     def _is_prompt_relevant(
         self,

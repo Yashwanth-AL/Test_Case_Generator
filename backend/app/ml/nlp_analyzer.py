@@ -1,15 +1,15 @@
 """Semantic NLP analysis for understanding documents and extracting relevant content.
 
-Uses TF-IDF vectorization and cosine similarity to semantically understand
-document content and find sections relevant to a user's query.
+Uses structure-aware TF-IDF with heading/content type weightaging for accurate
+semantic search and ranking.
 """
 import re
 import math
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, List, Tuple, Optional, Set
 from collections import Counter
 
 
-# ── Lightweight TF-IDF implementation ─────────────────────────────────────────
+# ── Enhanced tokenization with synonym expansion ───────────────────────────────
 
 def _tokenize(text: str) -> List[str]:
     """Lowercase tokenisation with stop-word removal."""
@@ -34,54 +34,137 @@ def _tokenize(text: str) -> List[str]:
     return [w for w in words if w not in STOP]
 
 
+def _expand_keywords(tokens: List[str]) -> Set[str]:
+    """Expand tokens with stemming and common variants for better matching."""
+    expanded = set(tokens)
+    
+    # Domain-specific synonyms for better matching
+    synonyms = {
+        "login": {"authorize", "authenticate", "signin", "sign-in"},
+        "database": {"db", "data"},
+        "configuration": {"config", "setup"},
+        "execute": {"run", "perform"},
+        "verify": {"check", "validate", "confirm"},
+        "delete": {"remove", "purge"},
+        "create": {"add", "new", "generate"},
+        "update": {"modify", "change", "edit"},
+        "retrieve": {"fetch", "get", "obtain"},
+        "transmit": {"send", "transfer"},
+        "commissioning": {"commission", "setup", "configure", "initialize"},
+        "error": {"exception", "failure", "issue"},
+        "success": {"pass", "complete", "ok"},
+    }
+    
+    for token in list(tokens):
+        # Add token variants
+        if token in synonyms:
+            expanded.update(synonyms[token])
+        
+        # Stemming variants
+        if token.endswith("ing") and len(token) > 5:
+            expanded.add(token[:-3])  # "commissioning" -> "commission"
+        if token.endswith("ed") and len(token) > 4:
+            expanded.add(token[:-2])  # "configured" -> "configure"
+        if token.endswith("s") and len(token) > 4 and not token.endswith("ss"):
+            expanded.add(token[:-1])  # "tests" -> "test"
+        if token.endswith("tion"):
+            expanded.add(token[:-4])  # "configuration" -> "configure"
+    
+    return expanded
+
+
 class _TfIdf:
-    """Minimal TF-IDF engine operating on a corpus of text chunks."""
+    """Enhanced TF-IDF engine with structure-aware weighting.
+    
+    Applies different weightages based on content type:
+    - H1/Title headings: 3.0x
+    - H2/Section headings: 2.5x
+    - H3/Subsection headings: 2.0x
+    - Bold/Emphasized: 1.5x
+    - Body text: 1.0x
+    """
 
     def __init__(self):
         self.idf: Dict[str, float] = {}
         self.doc_vectors: List[Dict[str, float]] = []
+        self.doc_weights: List[float] = []  # Content-type weightages
         self.n_docs = 0
 
-    def fit(self, documents: List[str]):
-        """Build vocabulary and IDF from a list of text chunks."""
+    def fit(self, documents: List[str], weights: List[float] = None):
+        """Build vocabulary and IDF from a list of text chunks with optional weights.
+        
+        Args:
+            documents: List of text chunks
+            weights: Optional list of weights per document (default 1.0 for all)
+        """
+        if weights is None:
+            weights = [1.0] * len(documents)
+        
+        self.doc_weights = weights
         tokenised = [_tokenize(d) for d in documents]
         self.n_docs = len(tokenised)
+        
+        # Build IDF across all documents
         df: Counter = Counter()
         for tokens in tokenised:
-            for t in set(tokens):
+            expanded = _expand_keywords(tokens)
+            for t in expanded:
                 df[t] += 1
+        
         self.idf = {
             term: math.log((self.n_docs + 1) / (count + 1)) + 1
             for term, count in df.items()
         }
-        self.doc_vectors = [self._tfidf_vec(tokens) for tokens in tokenised]
+        
+        # Create weighted TF-IDF vectors
+        self.doc_vectors = [
+            self._tfidf_vec(tokenised[i], weights[i])
+            for i in range(len(documents))
+        ]
 
     def query(self, text: str, top_k: int = 10) -> List[Tuple[int, float]]:
-        """Return (index, score) pairs ranked by cosine similarity to *text*."""
-        q_vec = self._tfidf_vec(_tokenize(text))
+        """Return (index, score) pairs ranked by weighted cosine similarity to *text*."""
+        q_vec = self._tfidf_vec(_tokenize(text), weight=1.0)
         scores: List[Tuple[int, float]] = []
+        
         for idx, d_vec in enumerate(self.doc_vectors):
             s = self._cosine(q_vec, d_vec)
             if s > 0:
                 scores.append((idx, s))
+        
         scores.sort(key=lambda x: x[1], reverse=True)
         return scores[:top_k]
 
-    def _tfidf_vec(self, tokens: List[str]) -> Dict[str, float]:
-        tf = Counter(tokens)
+    def _tfidf_vec(self, tokens: List[str], weight: float = 1.0) -> Dict[str, float]:
+        """Create TF-IDF vector with content-type weighting applied."""
+        expanded = _expand_keywords(tokens)
+        tf = Counter(t for tokens_list in [tokens] for t in tokens_list)  # Original TF
+        
         total = len(tokens) or 1
-        return {t: (c / total) * self.idf.get(t, 1.0) for t, c in tf.items()}
+        vector = {}
+        
+        for t in expanded:
+            # Use expanded keywords for matching but weight by expanded token count
+            tf_score = (tf.get(t, 0) + 1) / total  # Smoothing
+            idf_score = self.idf.get(t, 1.0)
+            vector[t] = (tf_score * idf_score) * weight
+        
+        return vector
 
     @staticmethod
     def _cosine(a: Dict[str, float], b: Dict[str, float]) -> float:
+        """Compute cosine similarity between two TF-IDF vectors."""
         common = set(a) & set(b)
         if not common:
             return 0.0
+        
         dot = sum(a[k] * b[k] for k in common)
         mag_a = math.sqrt(sum(v * v for v in a.values()))
         mag_b = math.sqrt(sum(v * v for v in b.values()))
+        
         if mag_a == 0 or mag_b == 0:
             return 0.0
+        
         return dot / (mag_a * mag_b)
 
 
@@ -117,16 +200,17 @@ class NLPAnalyzer:
             "domain": self._detect_domain(document_content),
         }
 
-    # ── smart chunking ────────────────────────────────────────────────────────
+    # ── smart chunking with structure awareness ───────────────────────────────
 
     def _smart_chunk(self, content: str) -> List[Dict]:
-        """Split content into semantic chunks, preserving context.
+        """Split content into semantic chunks, preserving structure and content type.
 
         Priority: heading-based → paragraph → sliding-window sentences.
+        Each chunk includes metadata about its type and hierarchy level.
         """
         chunks: List[Dict] = []
 
-        # 1. Markdown headings (#, ##, etc.)
+        # 1. Markdown headings (#, ##, etc.) - with level detection
         md_headings = list(re.finditer(r"(?:^|\n)(#{1,4})\s+(.+)", content))
         if len(md_headings) >= 2:
             for i, m in enumerate(md_headings):
@@ -134,13 +218,26 @@ class NLPAnalyzer:
                 end = md_headings[i + 1].start() if i + 1 < len(md_headings) else len(content)
                 title = m.group(2).strip()
                 body = content[start:end].strip()
+                heading_level = len(m.group(1))  # Number of # symbols
+                
                 if title and (len(body) > 15 or len(title) > 10):
-                    chunks.append({"title": title, "body": body, "full": f"{title}. {body}"})
+                    # Calculate weight based on heading level
+                    # H1 (#): 3.0x, H2 (##): 2.5x, H3 (###): 2.0x, H4 (####): 1.5x
+                    weights = {1: 3.0, 2: 2.5, 3: 2.0, 4: 1.5}
+                    weight = weights.get(heading_level, 1.5)
+                    
+                    chunks.append({
+                        "title": title,
+                        "body": body,
+                        "full": f"{title}. {body}",
+                        "type": "markdown_heading",
+                        "level": heading_level,
+                        "weight": weight
+                    })
             if chunks:
                 return self._merge_small_chunks(chunks)
 
-        # 1b. Numbered top-level headings (only matches lines that look like
-        #     section headings, not numbered list items inside a section body)
+        # 1b. Numbered top-level headings with section detection
         num_headings = list(re.finditer(
             r"(?:^|\n)(\d+(?:\.\d+)*[\.\)])\s+([A-Z][^\n]{5,})", content
         ))
@@ -150,8 +247,20 @@ class NLPAnalyzer:
                 end = num_headings[i + 1].start() if i + 1 < len(num_headings) else len(content)
                 title = m.group(2).strip()
                 body = content[start:end].strip()
+                
+                # Detect section hierarchy depth from numbering
+                num_parts = len(m.group(1).split("."))
+                weight = {1: 3.0, 2: 2.5, 3: 2.0}.get(num_parts, 1.5)
+                
                 if title and (len(body) > 15 or len(title) > 10):
-                    chunks.append({"title": title, "body": body, "full": f"{title}. {body}"})
+                    chunks.append({
+                        "title": title,
+                        "body": body,
+                        "full": f"{title}. {body}",
+                        "type": "numbered_heading",
+                        "level": num_parts,
+                        "weight": weight
+                    })
             if chunks:
                 return self._merge_small_chunks(chunks)
 
@@ -163,7 +272,14 @@ class NLPAnalyzer:
                 if len(para) < 15:
                     continue
                 title = self._first_sentence(para)
-                chunks.append({"title": title, "body": para, "full": para})
+                chunks.append({
+                    "title": title,
+                    "body": para,
+                    "full": para,
+                    "type": "paragraph",
+                    "level": 0,
+                    "weight": 1.0
+                })
             if len(chunks) >= 2:
                 return self._merge_small_chunks(chunks)
 
@@ -175,7 +291,14 @@ class NLPAnalyzer:
                 if len(item) < 10:
                     continue
                 title = self._first_sentence(item)
-                chunks.append({"title": title, "body": item, "full": item})
+                chunks.append({
+                    "title": title,
+                    "body": item,
+                    "full": item,
+                    "type": "bullet",
+                    "level": 0,
+                    "weight": 1.2  # Slightly higher than paragraph
+                })
             if len(chunks) >= 2:
                 return self._merge_small_chunks(chunks)
 
@@ -187,7 +310,14 @@ class NLPAnalyzer:
             group = sentences[i : i + window]
             combined = " ".join(group)
             title = self._first_sentence(combined)
-            chunks.append({"title": title, "body": combined, "full": combined})
+            chunks.append({
+                "title": title,
+                "body": combined,
+                "full": combined,
+                "type": "sentence_group",
+                "level": 0,
+                "weight": 1.0
+            })
             i += window - overlap
 
         if not chunks:
@@ -195,6 +325,9 @@ class NLPAnalyzer:
                 "title": self._first_sentence(content),
                 "body": content.strip(),
                 "full": content.strip(),
+                "type": "full_document",
+                "level": 0,
+                "weight": 1.0
             })
 
         return chunks
@@ -210,39 +343,58 @@ class NLPAnalyzer:
             if len(buf["full"]) < min_len:
                 buf["body"] = buf["body"] + "\n" + c["body"]
                 buf["full"] = buf["full"] + " " + c["full"]
+                # Preserve the higher weight
+                if "weight" in c and "weight" in buf:
+                    buf["weight"] = max(buf.get("weight", 1.0), c.get("weight", 1.0))
             else:
                 merged.append(buf)
                 buf = dict(c)
         if buf:
             merged.append(buf)
+        # Ensure all chunks have default weights
+        for chunk in merged if merged else chunks:
+            if "weight" not in chunk:
+                chunk["weight"] = 1.0
+            if "type" not in chunk:
+                chunk["type"] = "unknown"
+            if "level" not in chunk:
+                chunk["level"] = 0
         return merged if merged else chunks
 
-    # ── semantic search ───────────────────────────────────────────────────────
+    # ── semantic search with structure awareness ──────────────────────────────
 
     def _semantic_search(
         self, chunks: List[Dict], prompt: str
     ) -> List[Tuple[Dict, float]]:
-        """Rank chunks by semantic similarity to *prompt* using TF-IDF."""
+        """Rank chunks by structure-aware semantic similarity to *prompt*.
+        
+        Uses weighted TF-IDF that prioritizes:
+        - Headings/titles (higher weights)
+        - Content type (heading vs body)
+        - Heading depth level
+        """
         if not chunks:
             return []
 
+        # Ensure all chunks have weight metadata
+        for chunk in chunks:
+            if "weight" not in chunk:
+                chunk["weight"] = 1.0
+            if "type" not in chunk:
+                chunk["type"] = "unknown"
+
         corpus = [c["full"] for c in chunks]
+        weights = [c.get("weight", 1.0) for c in chunks]
+        
         engine = _TfIdf()
-        engine.fit(corpus)
+        engine.fit(corpus, weights=weights)
         results = engine.query(prompt, top_k=len(chunks))
 
-        # Exact-keyword boosting for technical terms
+        # Enhanced keyword extraction and expansion
         prompt_keywords = set(_tokenize(prompt))
-        expanded_prompt_keywords = set(prompt_keywords)
-        for kw in list(prompt_keywords):
-            # Lightweight stemming helps match prompt words like
-            # "commission" <-> "commissioning" and plural variants.
-            if kw.endswith("ing") and len(kw) > 5:
-                expanded_prompt_keywords.add(kw[:-3])
-            if kw.endswith("ed") and len(kw) > 4:
-                expanded_prompt_keywords.add(kw[:-2])
-            if kw.endswith("s") and len(kw) > 4:
-                expanded_prompt_keywords.add(kw[:-1])
+        expanded_prompt_keywords = _expand_keywords(list(prompt_keywords))
+        
+        # Technical terms (longer words, hyphenated, containing digits)
         technical = {
             w for w in expanded_prompt_keywords
             if len(w) > 4 or "-" in w or any(ch.isdigit() for ch in w)
@@ -250,31 +402,51 @@ class NLPAnalyzer:
 
         ranked: List[Tuple[Dict, float]] = []
         seen = set()
+        
+        # Process TF-IDF results with additional bonuses
         for idx, score in results:
             chunk_lower = chunks[idx]["full"].lower()
-            bonus = sum(0.1 for kw in technical if kw in chunk_lower)
-            ranked.append((chunks[idx], min(score + bonus, 1.0)))
+            
+            # Technical keyword bonus - more generous than before (0.1 -> 0.15)
+            technical_bonus = sum(0.15 for kw in technical if kw in chunk_lower)
+            
+            # Structure bonus based on chunk type
+            struct_bonus = 0.0
+            chunk_type = chunks[idx].get("type", "unknown")
+            if chunk_type in ["markdown_heading", "numbered_heading"]:
+                # Additional bonus for matching keywords in headings
+                heading_kw_matches = sum(1 for kw in prompt_keywords if kw in chunk_lower)
+                struct_bonus = 0.2 * heading_kw_matches  # Higher bonus for heading matches
+            
+            final_score = min(score + technical_bonus + struct_bonus, 1.0)
+            ranked.append((chunks[idx], final_score))
             seen.add(idx)
 
-        # Include missed chunks that have keyword overlap
+        # Include missed chunks that have strong keyword overlap
         for idx, chunk in enumerate(chunks):
             if idx in seen:
                 continue
             chunk_lower = chunk["full"].lower()
             kw_hits = sum(1 for kw in expanded_prompt_keywords if kw in chunk_lower)
+            
+            # Lower threshold with bonus for keyword matches in headings
             if kw_hits >= 2:
-                ranked.append((chunk, kw_hits * 0.05))
+                base_score = kw_hits * 0.08
+                if chunk.get("type") in ["markdown_heading", "numbered_heading"]:
+                    base_score *= 1.5  # Boost for heading matches
+                ranked.append((chunk, min(base_score, 0.5)))
 
         ranked.sort(key=lambda x: x[1], reverse=True)
 
-        # Keep only strongly relevant chunks when prompt exists.
-        # This prevents broad documents from returning all sections.
+        # Improved threshold logic - be more inclusive
         if ranked:
             max_score = ranked[0][1]
-            threshold = max(max_score * 0.55, 0.08)
+            # Lower threshold from 0.55 to 0.40 to include more relevant results
+            threshold = max(max_score * 0.40, 0.06)
             filtered = [(c, s) for c, s in ranked if s >= threshold]
             if not filtered:
-                filtered = ranked[:1]
+                # If filtering is too strict, include at least top 3
+                filtered = ranked[:max(3, len(ranked) // 3)]
             return filtered
 
         return ranked

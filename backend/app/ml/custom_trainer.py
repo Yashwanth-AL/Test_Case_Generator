@@ -4,6 +4,7 @@ import os
 from typing import Dict, List, Any, Optional
 from datetime import datetime
 import re
+from collections import Counter
 
 
 class CustomTrainer:
@@ -108,6 +109,10 @@ class CustomTrainer:
                 extracted[category] = count
         
         return extracted
+
+    def extract_keywords(self, content: str) -> Dict[str, int]:
+        """Public wrapper for keyword extraction used by generation pipeline."""
+        return self._extract_keywords(content)
     
     def _learn_patterns(self, data: Dict, example: Dict):
         """Learn patterns from the example"""
@@ -169,6 +174,62 @@ class CustomTrainer:
             if pattern["category"] == category:
                 return pattern
         return None
+
+    @staticmethod
+    def _tokenize_for_learning(text: str) -> List[str]:
+        """Tokenize text for prompt-term learning."""
+        words = re.findall(r"[a-z][a-z0-9\-]{2,}", text.lower())
+        stop = {
+            "the", "and", "for", "with", "from", "this", "that", "into", "over",
+            "when", "where", "what", "which", "then", "than", "are", "was", "were",
+            "has", "have", "had", "not", "all", "any", "can", "will", "should",
+            "must", "test", "tests", "testing", "case", "cases", "generate", "prompt",
+        }
+        return [w for w in words if w not in stop]
+
+    def get_prompt_boost_terms(self, prompt: str, max_terms: int = 120) -> List[str]:
+        """Learn prompt-relevant terms from historical examples.
+
+        This creates a compact list of high-signal terms to boost retrieval and
+        ranking for future generations.
+        """
+        prompt_tokens = set(self._tokenize_for_learning(prompt))
+        if not prompt_tokens:
+            return []
+
+        data = self._load_data()
+        examples = data.get("examples", [])[-400:]
+        if not examples:
+            return []
+
+        term_scores: Counter = Counter()
+
+        for ex in examples:
+            ex_doc = ex.get("document_content", "")
+            ex_tags = " ".join(ex.get("tags", []))
+            ex_titles = " ".join(tc.get("title", "") for tc in ex.get("test_cases", []))
+            combined = f"{ex_doc} {ex_tags} {ex_titles}".lower()
+
+            # Score example relevance against prompt tokens.
+            overlap = sum(1 for t in prompt_tokens if t in combined)
+            if overlap == 0:
+                continue
+
+            # Higher overlap examples contribute more to learned terms.
+            example_weight = min(1.0 + (overlap * 0.5), 3.0)
+
+            # Learn from document, tags and successful testcase titles.
+            learned_tokens = self._tokenize_for_learning(combined)
+            for token, count in Counter(learned_tokens).items():
+                if len(token) < 4:
+                    continue
+                term_scores[token] += count * example_weight
+
+        if not term_scores:
+            return []
+
+        ranked = [term for term, _ in term_scores.most_common(max_terms)]
+        return ranked
     
     def find_relevant_examples(
         self,

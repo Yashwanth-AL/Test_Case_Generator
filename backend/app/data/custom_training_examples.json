@@ -706,6 +706,1008 @@
       },
       "test_case_count": 4,
       "created_at": "2026-03-26T15:49:09.797810"
+    },
+    {
+      "id": "EXP-0013",
+      "document_content": "EcoStruxure Panel Server Webpages Overview\nThe web server embedded in the EcoStruxure Panel Server provides webpages\nenabling you to commission electrical products and systems compatible with the\nEcoStruxure Panel Server in your switchboard.\nIn addition the webpages provide real-time data and active alarm visualization,\nand historical analysis from devices (depending on the model), for entry-level\nenergy and operation management.\nElectrical product and commissioning capabilities allow you to:\n\u2022 Discover wireless devices installed in the EcoStruxure Panel Server system\n(depending on the model).\n\u2022 Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel\nServer (depending on the model).\n\u2022 Configure I/O devices connected to the EcoStruxure Panel Server through\nthe digital inputs (depending on the model).\nEnergy and operation monitoring capabilities allow you to:\n\u2022 Visualize real-time data and events through a supported web browser.\n\u2022 Monitor and control connected devices.\n\u2022 Publish data to an SFTP or HTTPS server or to the Schneider Electric cloud.\n\u2022 Visualize trending on historical data, up to a period of 3 years (Advanced\nmodel).\n\u2022 Export selected logged data to your PC for additional analysis (Advanced\nmodel).\nFor more detailed information about the webpages, refer to Using EcoStruxure\nPanel Server Webpages, page 190.\nDOCA0172EN-19 33\nEcoStruxure Panel Server Webpages Overview EcoStruxure Panel Server\nEcoStruxure Power Commission (EPC) Software\nOverview\nEcoStruxure Power Commission is intelligent software that helps you set up, test,\nand commission the electrical products and systems in your switchboards with\nefficiency and ease. It also allows you to generate a dedicated QR code for the\nelectrical panel to enable digital collaboration with contractors and facility\nmanagers by sharing important documentation.\nKey Features\nEcoStruxure Power Commission software performs the following actions for the\nsupported devices :\n\u2022 Easy setup\n\u25e6 Discover all the smart d",
+      "test_cases": [
+        {
+          "id": "Panel Server-ATC-001",
+          "test_type": "Commissioning",
+          "title": "EcoStruxure Panel Server Webpages Overview",
+          "method": "Manual Testing",
+          "description": "EcoStruxure Panel Server Webpages Overview The web server embedded in the EcoStruxure Panel Server provides webpages enabling you to commission electrical products and systems compatible with the EcoStruxure Panel Server in your switchboard. In addition the webpages provide real-time data and active alarm visualization, and historical analysis from devices (depending on the model), for entry-level energy and operation management. Electrical product and commissioning capabilities allow you to:",
+          "objective": "Validate EcoStruxure Panel Server Webpages Overview",
+          "preconditions": [],
+          "steps": [
+            "Verify that ecoStruxure Panel Server Webpages Overview The web server embedded in the EcoStruxure Panel Server provides webpages enabling you to commission electrical products and systems compatible with the EcoStruxure Panel Server in your switchboard",
+            "Verify that in addition the webpages provide real-time data and active alarm visualization, and historical analysis from devices (depending on the model), for entry-level energy and operation management",
+            "Verify that electrical product and commissioning capabilities allow you to:"
+          ],
+          "expected_results": [
+            "EcoStruxure Panel Server Webpages Overview The web server embedded in the EcoStruxure Panel Server provides webpages enabling you to commission electrical products and systems compatible with the EcoStruxure Panel Server in your switchboard confirmed as expected",
+            "In addition the webpages provide real-time data and active alarm visualization, and historical analysis from devices (depending on the model), for entry-level energy and operation management confirmed as expected",
+            "Electrical product and commissioning capabilities allow you to: confirmed as expected"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "EcoStruxure Panel Server Webpages Overview The web server embedded in the EcoStruxure Panel Server provides webpages enabling you to commission electrical products and systems compatible with the EcoStruxure Panel Server in your switchboard confirmed as expected",
+            "In addition the webpages provide real-time data and active alarm visualization, and historical analysis from devices (depending on the model), for entry-level energy and operation management confirmed as expected",
+            "Electrical product and commissioning capabilities allow you to: confirmed as expected",
+            "All verifications passed for: EcoStruxure Panel Server Webpages Overview"
+          ],
+          "final_result": "All verifications passed for: EcoStruxure Panel Server Webpages Overview"
+        },
+        {
+          "id": "Panel Server-ATC-002",
+          "test_type": "Commissioning",
+          "title": "Discover wireless devices installed in the EcoStruxure Panel Server system",
+          "method": "Manual Testing",
+          "description": "Discover wireless devices installed in the EcoStruxure Panel Server system (depending on the model).",
+          "objective": "Validate Discover wireless devices installed in the EcoStruxure Panel Server system",
+          "preconditions": [],
+          "steps": [
+            "Discover wireless devices installed in the EcoStruxure Panel Server system (depending on the model)"
+          ],
+          "expected_results": [
+            "Step completed: Discover wireless devices installed in the EcoStruxure"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Discover wireless devices installed in the EcoStruxure",
+            "All verifications passed for: Discover wireless devices installed in the EcoStruxure Panel Server system"
+          ],
+          "final_result": "All verifications passed for: Discover wireless devices installed in the EcoStruxure Panel Server system"
+        },
+        {
+          "id": "Panel Server-ATC-003",
+          "test_type": "Commissioning",
+          "title": "Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel",
+          "method": "Manual Testing",
+          "description": "Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel Server (depending on the model).",
+          "objective": "Validate Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel",
+          "preconditions": [],
+          "steps": [
+            "Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel Server (depending on the model)"
+          ],
+          "expected_results": [
+            "Step completed: Discover Modbus-SL and Modbus TCP/IP devices from EcoSt"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Discover Modbus-SL and Modbus TCP/IP devices from EcoSt",
+            "All verifications passed for: Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel"
+          ],
+          "final_result": "All verifications passed for: Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel"
+        },
+        {
+          "id": "Panel Server-ATC-004",
+          "test_type": "Commissioning",
+          "title": "Configure I/O devices connected to the EcoStruxure Panel Server through",
+          "method": "Manual Testing",
+          "description": "Configure I/O devices connected to the EcoStruxure Panel Server through the digital inputs (depending on the model). Energy and operation monitoring capabilities allow you to:",
+          "objective": "Validate Configure I/O devices connected to the EcoStruxure Panel Server through",
+          "preconditions": [],
+          "steps": [
+            "Configure I/O devices connected to the EcoStruxure Panel Server through the digital inputs (depending on the model)",
+            "Verify that energy and operation monitoring capabilities allow you to:"
+          ],
+          "expected_results": [
+            "Connection re-established successfully",
+            "Energy and operation monitoring capabilities allow you to: confirmed as expected"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Connection re-established successfully",
+            "Energy and operation monitoring capabilities allow you to: confirmed as expected",
+            "All verifications passed for: Configure I/O devices connected to the EcoStruxure Panel Server through"
+          ],
+          "final_result": "All verifications passed for: Configure I/O devices connected to the EcoStruxure Panel Server through"
+        },
+        {
+          "id": "Panel Server-ATC-005",
+          "test_type": "Commissioning",
+          "title": "Visualize real-time data and events through a supported web browser.",
+          "method": "Manual Testing",
+          "description": "Visualize real-time data and events through a supported web browser.",
+          "objective": "Validate Visualize real-time data and events through a supported web browser.",
+          "preconditions": [],
+          "steps": [
+            "Validate: Visualize real-time data and events through a supported web browser"
+          ],
+          "expected_results": [
+            "Step completed: Validate: Visualize real-time data and events through a"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Validate: Visualize real-time data and events through a",
+            "All verifications passed for: Visualize real-time data and events through a supported web browser."
+          ],
+          "final_result": "All verifications passed for: Visualize real-time data and events through a supported web browser."
+        }
+      ],
+      "tags": [
+        "auto_training",
+        "generation"
+      ],
+      "extracted_keywords": {
+        "api": 1,
+        "database": 5,
+        "ui": 2
+      },
+      "test_case_count": 5,
+      "created_at": "2026-03-26T16:04:42.118386"
+    },
+    {
+      "id": "EXP-0014",
+      "document_content": "EcoStruxure Power Commission supports easy setup and advanced testing.",
+      "test_cases": [
+        {
+          "id": "EcoStruxure Power Commission supports easy-ATC-001",
+          "test_type": "Commissioning",
+          "title": "EcoStruxure Power Commission supports easy setup and advanced testing.",
+          "method": "Manual Testing",
+          "description": "EcoStruxure Power Commission supports easy setup and advanced testing.",
+          "objective": "Validate EcoStruxure Power Commission supports easy setup and advanced testing. according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Verify that ecoStruxure Power Commission supports easy setup and advanced testing"
+          ],
+          "expected_results": [
+            "EcoStruxure Power Commission supports easy setup and advanced testing confirmed as expected"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "EcoStruxure Power Commission supports easy setup and advanced testing confirmed as expected",
+            "All verifications passed for: EcoStruxure Power Commission supports easy setup and advanced testing."
+          ],
+          "final_result": "All verifications passed for: EcoStruxure Power Commission supports easy setup and advanced testing."
+        }
+      ],
+      "tags": [
+        "auto_training",
+        "generation",
+        "prompted"
+      ],
+      "extracted_keywords": {},
+      "test_case_count": 1,
+      "created_at": "2026-03-26T16:19:21.618824"
+    },
+    {
+      "id": "EXP-0015",
+      "document_content": "EcoStruxure Panel Server Webpages Overview\nThe web server embedded in the EcoStruxure Panel Server provides webpages\nenabling you to commission electrical products and systems compatible with the\nEcoStruxure Panel Server in your switchboard.\nIn addition the webpages provide real-time data and active alarm visualization,\nand historical analysis from devices (depending on the model), for entry-level\nenergy and operation management.\nElectrical product and commissioning capabilities allow you to:\n\u2022 Discover wireless devices installed in the EcoStruxure Panel Server system\n(depending on the model).\n\u2022 Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel\nServer (depending on the model).\n\u2022 Configure I/O devices connected to the EcoStruxure Panel Server through\nthe digital inputs (depending on the model).\nEnergy and operation monitoring capabilities allow you to:\n\u2022 Visualize real-time data and events through a supported web browser.\n\u2022 Monitor and control connected devices.\n\u2022 Publish data to an SFTP or HTTPS server or to the Schneider Electric cloud.\n\u2022 Visualize trending on historical data, up to a period of 3 years (Advanced\nmodel).\n\u2022 Export selected logged data to your PC for additional analysis (Advanced\nmodel).\nFor more detailed information about the webpages, refer to Using EcoStruxure\nPanel Server Webpages, page 190.\nDOCA0172EN-19 33\nEcoStruxure Panel Server Webpages Overview EcoStruxure Panel Server\nEcoStruxure Power Commission (EPC) Software\nOverview\nEcoStruxure Power Commission is intelligent software that helps you set up, test,\nand commission the electrical products and systems in your switchboards with\nefficiency and ease. It also allows you to generate a dedicated QR code for the\nelectrical panel to enable digital collaboration with contractors and facility\nmanagers by sharing important documentation.\nKey Features\nEcoStruxure Power Commission software performs the following actions for the\nsupported devices :\n\u2022 Easy setup\n\u25e6 Discover all the smart d",
+      "test_cases": [
+        {
+          "id": "Panel Server-ATC-001",
+          "test_type": "Commissioning",
+          "title": "EcoStruxure Panel Server Webpages Overview",
+          "method": "Manual Testing",
+          "description": "EcoStruxure Panel Server Webpages Overview The web server embedded in the EcoStruxure Panel Server provides webpages enabling you to commission electrical products and systems compatible with the EcoStruxure Panel Server in your switchboard. In addition the webpages provide real-time data and active alarm visualization, and historical analysis from devices (depending on the model), for entry-level energy and operation management. Electrical product and commissioning capabilities allow you to:",
+          "objective": "Validate EcoStruxure Panel Server Webpages Overview",
+          "preconditions": [],
+          "steps": [
+            "Verify that ecoStruxure Panel Server Webpages Overview The web server embedded in the EcoStruxure Panel Server provides webpages enabling you to commission electrical products and systems compatible with the EcoStruxure Panel Server in your switchboard",
+            "Verify that in addition the webpages provide real-time data and active alarm visualization, and historical analysis from devices (depending on the model), for entry-level energy and operation management",
+            "Verify that electrical product and commissioning capabilities allow you to:"
+          ],
+          "expected_results": [
+            "EcoStruxure Panel Server Webpages Overview The web server embedded in the EcoStruxure Panel Server provides webpages enabling you to commission electrical products and systems compatible with the EcoStruxure Panel Server in your switchboard confirmed as expected",
+            "In addition the webpages provide real-time data and active alarm visualization, and historical analysis from devices (depending on the model), for entry-level energy and operation management confirmed as expected",
+            "Electrical product and commissioning capabilities allow you to: confirmed as expected"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "EcoStruxure Panel Server Webpages Overview The web server embedded in the EcoStruxure Panel Server provides webpages enabling you to commission electrical products and systems compatible with the EcoStruxure Panel Server in your switchboard confirmed as expected",
+            "In addition the webpages provide real-time data and active alarm visualization, and historical analysis from devices (depending on the model), for entry-level energy and operation management confirmed as expected",
+            "Electrical product and commissioning capabilities allow you to: confirmed as expected",
+            "All verifications passed for: EcoStruxure Panel Server Webpages Overview"
+          ],
+          "final_result": "All verifications passed for: EcoStruxure Panel Server Webpages Overview"
+        },
+        {
+          "id": "Panel Server-ATC-002",
+          "test_type": "Commissioning",
+          "title": "Discover wireless devices installed in the EcoStruxure Panel Server system",
+          "method": "Manual Testing",
+          "description": "Discover wireless devices installed in the EcoStruxure Panel Server system (depending on the model).",
+          "objective": "Validate Discover wireless devices installed in the EcoStruxure Panel Server system",
+          "preconditions": [],
+          "steps": [
+            "Discover wireless devices installed in the EcoStruxure Panel Server system (depending on the model)"
+          ],
+          "expected_results": [
+            "Step completed: Discover wireless devices installed in the EcoStruxure"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Discover wireless devices installed in the EcoStruxure",
+            "All verifications passed for: Discover wireless devices installed in the EcoStruxure Panel Server system"
+          ],
+          "final_result": "All verifications passed for: Discover wireless devices installed in the EcoStruxure Panel Server system"
+        },
+        {
+          "id": "Panel Server-ATC-003",
+          "test_type": "Commissioning",
+          "title": "Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel",
+          "method": "Manual Testing",
+          "description": "Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel Server (depending on the model).",
+          "objective": "Validate Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel",
+          "preconditions": [],
+          "steps": [
+            "Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel Server (depending on the model)"
+          ],
+          "expected_results": [
+            "Step completed: Discover Modbus-SL and Modbus TCP/IP devices from EcoSt"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Discover Modbus-SL and Modbus TCP/IP devices from EcoSt",
+            "All verifications passed for: Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel"
+          ],
+          "final_result": "All verifications passed for: Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel"
+        },
+        {
+          "id": "Panel Server-ATC-004",
+          "test_type": "Commissioning",
+          "title": "Configure I/O devices connected to the EcoStruxure Panel Server through",
+          "method": "Manual Testing",
+          "description": "Configure I/O devices connected to the EcoStruxure Panel Server through the digital inputs (depending on the model). Energy and operation monitoring capabilities allow you to:",
+          "objective": "Validate Configure I/O devices connected to the EcoStruxure Panel Server through",
+          "preconditions": [],
+          "steps": [
+            "Configure I/O devices connected to the EcoStruxure Panel Server through the digital inputs (depending on the model)",
+            "Verify that energy and operation monitoring capabilities allow you to:"
+          ],
+          "expected_results": [
+            "Connection re-established successfully",
+            "Energy and operation monitoring capabilities allow you to: confirmed as expected"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Connection re-established successfully",
+            "Energy and operation monitoring capabilities allow you to: confirmed as expected",
+            "All verifications passed for: Configure I/O devices connected to the EcoStruxure Panel Server through"
+          ],
+          "final_result": "All verifications passed for: Configure I/O devices connected to the EcoStruxure Panel Server through"
+        },
+        {
+          "id": "Panel Server-ATC-005",
+          "test_type": "Commissioning",
+          "title": "Visualize real-time data and events through a supported web browser.",
+          "method": "Manual Testing",
+          "description": "Visualize real-time data and events through a supported web browser.",
+          "objective": "Validate Visualize real-time data and events through a supported web browser.",
+          "preconditions": [],
+          "steps": [
+            "Validate: Visualize real-time data and events through a supported web browser"
+          ],
+          "expected_results": [
+            "Step completed: Validate: Visualize real-time data and events through a"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Validate: Visualize real-time data and events through a",
+            "All verifications passed for: Visualize real-time data and events through a supported web browser."
+          ],
+          "final_result": "All verifications passed for: Visualize real-time data and events through a supported web browser."
+        }
+      ],
+      "tags": [
+        "auto_training",
+        "generation"
+      ],
+      "extracted_keywords": {
+        "api": 1,
+        "database": 5,
+        "ui": 2
+      },
+      "test_case_count": 5,
+      "created_at": "2026-03-26T16:20:32.924908"
+    },
+    {
+      "id": "EXP-0016",
+      "document_content": "EcoStruxure Panel Server Webpages Overview  \nThe web server embedded in the EcoStruxure Panel Server provides webpages  \nenabling you to commission electrical products and systems compatible with the  \nEcoStruxure Panel Server in your switchboard.  \nIn addition the webpages provide real -time data and active alarm visualization,  \nand historical analysis from devices (depending on the model), for entry -level  \nenergy and operation management.  \nElectrical product and commissioning capabilities allow you to:  \n\u2022 Discover wireless devices installed in the EcoStruxure Panel Server system  \n(depending on the model).  \n\u2022 Discover Modbus -SL and Modbus TCP/IP devices from EcoStruxure Panel  \nServer (depending on the model).  \n\u2022 Configure I/O devices connected to the EcoStruxure Panel Server through  \nthe digital inputs (depending on the model).  \nEnergy and operation monitoring capabilities allow you to:  \n\u2022 Visualize real -time data and events through a supported web browser.  \n\u2022 Monitor and control connected devices.  \n\u2022 Publish data to an SFTP or HTTPS server or to the Schneider Electric cloud.  \n\u2022 Visualize trending on historical data, up to a period of 3 years (Advanced  \nmodel).  \n\u2022 Export selected logged data to your PC for additional analysis (Advanced  \nmodel).  \nFor more detailed information about the webpages, refer to Using EcoStruxure  \nPanel Server Webpages, page 190.  \nDOCA0172EN -19 33  \nEcoStruxure Panel Server Webpages Overview EcoStruxure Panel Server  \nEcoStruxure Power Commission (EPC) Software  \nOverview  \nEcoStruxure Power Commission is intelligent software that helps you set up, test,  \nand commission the electrical products and systems in your switchboards with  \nefficiency and ease. It also allows you to generate a dedicated QR code for the  \nelectrical panel to enable digital collaboration with contractors and facility  \nmanagers by sharing important documentation.  \nKey Features  EcoStruxure Power Commission software performs the following act",
+      "test_cases": [
+        {
+          "id": "Panel Server-ATC-001",
+          "test_type": "Commissioning",
+          "title": "Giving access to cloud connected gateways and devices to associate",
+          "method": "Manual Testing",
+          "description": "Giving access to cloud connected gateways and devices to associate required models. A custom device model in the EcoStruxure Power Commission Web tool contains the list of measurements, alarms, Modbus frames and events that can be used to monitor Modbus based devices in the field. The user can create, edit, view, and export device model data as per the requirement.",
+          "objective": "Validate Giving access to cloud connected gateways and devices to associate according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: Giving access to cloud connected gateways and devices to associate required models",
+            "Validate: A custom device model in the EcoStruxure Power Commission Web tool contains the list of measurements, alarms, Modbus frames and events that can be used to monitor Modbus based devices in the field",
+            "Validate: The user can create, edit, view, and export device model data as per the requirement",
+            "Verify that key Features The EcoStruxure Power Commission Web tool allows you to perform the following actions:"
+          ],
+          "expected_results": [
+            "Connection re-established successfully",
+            "Step completed: Validate: A custom device model in the EcoStruxure Powe",
+            "Step completed: Validate: The user can create, edit, view, and export d",
+            "Key Features The EcoStruxure Power Commission Web tool allows you to perform the following actions: confirmed as expected"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Connection re-established successfully",
+            "Step completed: Validate: A custom device model in the EcoStruxure Powe",
+            "Step completed: Validate: The user can create, edit, view, and export d",
+            "Key Features The EcoStruxure Power Commission Web tool allows you to perform the following actions: confirmed as expected",
+            "All verifications passed for: Giving access to cloud connected gateways and devices to associate"
+          ],
+          "final_result": "All verifications passed for: Giving access to cloud connected gateways and devices to associate"
+        },
+        {
+          "id": "Panel Server-ATC-002",
+          "test_type": "Commissioning",
+          "title": "View and Export Models: Select and export device models previously created",
+          "method": "Manual Testing",
+          "description": "View and Export Models: Select and export device models previously created by you or others so that they can be imported in EcoStruxure Panel Server. DOCA0172EN -19 35 EcoStruxure Power Commission Web Tool (EPC Web) EcoStruxure Panel Server Edge Monitoring and Supervision Software EcoStruxure Power Monitoring Expert (PME) EcoStruxure Panel Server allows you to export the panel configuration (list of devices and communication addresses) into PME or EPO by using EcoStruxure Power Commission softwa",
+          "objective": "Validate View and Export Models: Select and export device models previously created according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: View and Export Models: Select and export device models previously created by you or others so that they can be imported in EcoStruxure Panel Server",
+            "Validate: Detailed help and instructions for creating a device model are available in the EcoStruxure Power Commission Web tool at Help > Documentation",
+            "Validate: For more information, go to EcoStruxure Power Commission Web",
+            "Verify that dOCA0172EN -19 35 EcoStruxure Power Commission Web Tool (EPC Web) EcoStruxure Panel Server Edge Monitoring and Supervision Software EcoStruxure Power Monitoring Expert (PME) EcoStruxure Panel Server allows you to export the panel configuration (list of devices and communication addresses) into PME or EPO by using EcoStruxure Power Commission software, for setup efficiency",
+            "Validate: EcoStruxure Power Monitoring Expert is a complete, interoperable, and scalable software package for power management applications",
+            "Verify that it allows you to share information with key stakeholders or across your entire operation to influence behavioral changes that can save you money",
+            "Verify that with rich data integration from connected devices, EcoStruxure Power Operation unique capabilities provide real -time situational awareness and offer a high -performance, cyber\u0002resilient solution for your specialized power network"
+          ],
+          "expected_results": [
+            "Step completed: Validate: View and Export Models: Select and export dev",
+            "Step completed: Validate: Detailed help and instructions for creating a",
+            "Step completed: Validate: For more information, go to EcoStruxure Power",
+            "DOCA0172EN -19 35 EcoStruxure Power Commission Web Tool (EPC Web) EcoStruxure Panel Server Edge Monitoring and Supervision Software EcoStruxure Power Monitoring Expert (PME) EcoStruxure Panel Server allows you to export the panel configuration (list of devices and communication addresses) into PME or EPO by using EcoStruxure Power Commission software, for setup efficiency confirmed as expected",
+            "Step completed: Validate: EcoStruxure Power Monitoring Expert is a comp",
+            "It allows you to share information with key stakeholders or across your entire operation to influence behavioral changes that can save you money confirmed as expected"
+          ],
+          "priority": "Critical",
+          "acceptance_criteria": [
+            "Step completed: Validate: View and Export Models: Select and export dev",
+            "Step completed: Validate: Detailed help and instructions for creating a",
+            "Step completed: Validate: For more information, go to EcoStruxure Power",
+            "DOCA0172EN -19 35 EcoStruxure Power Commission Web Tool (EPC Web) EcoStruxure Panel Server Edge Monitoring and Supervision Software EcoStruxure Power Monitoring Expert (PME) EcoStruxure Panel Server allows you to export the panel configuration (list of devices and communication addresses) into PME or EPO by using EcoStruxure Power Commission software, for setup efficiency confirmed as expected",
+            "All verifications passed for: View and Export Models: Select and export device models previously created"
+          ],
+          "final_result": "All verifications passed for: View and Export Models: Select and export device models previously created"
+        },
+        {
+          "id": "Panel Server-ATC-003",
+          "test_type": "Commissioning",
+          "title": "Digital collaboration",
+          "method": "Manual Testing",
+          "description": "Digital collaboration Create a unique QR code for the entire switchboard and then upload all relevant documentation including important CAD drawings, user guides, bill of materials, single -line diagrams, photos and more to Schneider Electric cloud repository. Simplify project handover with the digi",
+          "objective": "Validate Digital collaboration according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: Digital collaboration Create a unique QR code for the entire switchboard and then upload all relevant documentation including important CAD drawings, user guides, bill of materials, single -line diagrams, photos and more to Schneider Electric cloud repository",
+            "Validate: Simplify project handover with the digital logbook functionality, making it faster and easier for the facility manager to access historical information and collaborate with all project partners For more information, tutorials, and download link, visit the EcoStruxure Power Commission software webpage. 34 DOCA0172EN -19 EcoStruxure Panel Server EcoStruxure Power Commission (EPC) Software EcoStruxure Power Commission Web Tool (EPC Web) Overview The EcoStruxure Power Commission Web tool is intended to help system integrators save time to execute their projects by offering the following actions so that you can cater to different customer requirements in terms of events or measurements of devices to be monitored:"
+          ],
+          "expected_results": [
+            "Step completed: Validate: Digital collaboration Create a unique QR code",
+            "Target page/screen is displayed"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Validate: Digital collaboration Create a unique QR code",
+            "Target page/screen is displayed",
+            "All verifications passed for: Digital collaboration"
+          ],
+          "final_result": "All verifications passed for: Digital collaboration"
+        },
+        {
+          "id": "Panel Server-ATC-004",
+          "test_type": "Commissioning",
+          "title": "Export selected logged data to your PC for additional analysis (Advanced",
+          "method": "Manual Testing",
+          "description": "Export selected logged data to your PC for additional analysis (Advanced model). DOCA0172EN -19 33 EcoStruxure Panel Server Webpages Overview EcoStruxure Panel Server EcoStruxure Power Commission (EPC) Software Overview EcoStruxure Power Commission is intelligent software that helps you set up, test, and commission the electrical products and systems in your switchboards with efficiency and ease. Key Features EcoStruxure Power Commission software performs the following actions for the supported ",
+          "objective": "Validate Export selected logged data to your PC for additional analysis (Advanced according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: Export selected logged data to your PC for additional analysis (Advanced model)",
+            "Validate: For more detailed information about the webpages, refer to Using EcoStruxure Panel Server Webpages,",
+            "Validate: DOCA0172EN -19 33 EcoStruxure Panel Server Webpages Overview EcoStruxure Panel Server EcoStruxure Power Commission (EPC) Software Overview EcoStruxure Power Commission is intelligent software that helps you set up, test, and commission the electrical products and systems in your switchboards with efficiency and ease",
+            "Verify that it also allows you to generate a dedicated QR code for the electrical panel to enable digital collaboration with contractors and facility managers by sharing important documentation",
+            "Validate: Key Features EcoStruxure Power Commission software performs the following actions for the supported devices :"
+          ],
+          "expected_results": [
+            "Step completed: Validate: Export selected logged data to your PC for ad",
+            "Step completed: Validate: For more detailed information about the webpa",
+            "Configuration applied correctly",
+            "It also allows you to generate a dedicated QR code for the electrical panel to enable digital collaboration with contractors and facility managers by sharing important documentation confirmed as expected",
+            "Step completed: Validate: Key Features EcoStruxure Power Commission sof"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Validate: Export selected logged data to your PC for ad",
+            "Step completed: Validate: For more detailed information about the webpa",
+            "Configuration applied correctly",
+            "It also allows you to generate a dedicated QR code for the electrical panel to enable digital collaboration with contractors and facility managers by sharing important documentation confirmed as expected",
+            "All verifications passed for: Export selected logged data to your PC for additional analysis (Advanced"
+          ],
+          "final_result": "All verifications passed for: Export selected logged data to your PC for additional analysis (Advanced"
+        }
+      ],
+      "tags": [
+        "auto_training",
+        "generation",
+        "prompted"
+      ],
+      "extracted_keywords": {
+        "api": 1,
+        "database": 5,
+        "ui": 2
+      },
+      "test_case_count": 4,
+      "created_at": "2026-03-27T15:23:23.358608"
+    },
+    {
+      "id": "EXP-0017",
+      "document_content": "Code Llama-Based Action Code Synthesis",
+      "test_cases": [
+        {
+          "id": "ATC-001",
+          "test_type": "Functional Testing",
+          "title": "Code Llama-Based Action Code Synthesis",
+          "method": "Manual Testing",
+          "description": "Code Llama-Based Action Code Synthesis",
+          "objective": "Validate Code Llama-Based Action Code Synthesis",
+          "preconditions": [],
+          "steps": [
+            "Validate: Code Llama-Based Action Code Synthesis"
+          ],
+          "expected_results": [
+            "Step completed: Validate: Code Llama-Based Action Code Synthesis"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Validate: Code Llama-Based Action Code Synthesis",
+            "All verifications passed for: Code Llama-Based Action Code Synthesis"
+          ],
+          "final_result": "All verifications passed for: Code Llama-Based Action Code Synthesis"
+        }
+      ],
+      "tags": [
+        "auto_training",
+        "generation"
+      ],
+      "extracted_keywords": {},
+      "test_case_count": 1,
+      "created_at": "2026-03-27T18:55:59.452328"
+    },
+    {
+      "id": "EXP-0018",
+      "document_content": "\u0000 MCB (Miniature Circuit Breaker) \u2013 User Manual 1. Introduction An MCB is a safety device used \nin electrical systems. It protects circuits from: Overload Short circuit It automatically turns OFF \nwhen a fault occurs. 2. Main Parts of MCB Toggle Switch \u2013 Used to turn ON/OFF manually Trip \nMechanism \u2013 Automatically trips during fault Terminals \u2013 For connecting wires Arc Chamber \u2013 \nControls spark during switching 3. Working Principle When current is normal \u0000 MCB stays ON \nWhen overload or short circuit happens \u0000 MCB trips (turns OFF) This prevents damage to wires \nand devices 4. How to Use Turning ON Push the switch to UP (ON position) Turning OFF Push the \nswitch to DOWN (OFF position) After Trip Identify the problem (overload or short circuit) Fix the \nissue Reset MCB by switching it ON again 5. Installation Guidelines Install on distribution board \n(DB) Connect phase wire to input terminal Connect output to load Tighten connections properly \nUse correct rating (e.g., 6A, 16A, 32A) 6. Safety Precautions Do not touch with wet hands Do not \noverload the circuit Always turn OFF power before maintenance Use proper rated MCB Replace if \ndamaged 7. Advantages Fast protection Reusable (no need to replace like fuse) Easy to operate \nReliable and safe 8. Common Issues Frequent tripping \u0000 Overload or faulty device MCB not \nresetting \u0000 Serious fault in circuit Heating \u0000 Loose connection or high load 9. Maintenance Check \nconnections regularly Clean dust from panel Test MCB periodically",
+      "test_cases": [
+        {
+          "id": "ATC-001",
+          "test_type": "Commissioning",
+          "title": "\u0000 MCB (Miniature Circuit Breaker) - User Manual 1.",
+          "method": "Manual Testing",
+          "description": "Introduction An MCB is a safety device used in electrical systems. It protects circuits from: Overload Short circuit It automatically turns OFF",
+          "objective": "Validate \u0000 MCB (Miniature Circuit Breaker) - User Manual 1.",
+          "preconditions": [],
+          "steps": [
+            "Validate: \u0000 MCB (Miniature Circuit Breaker) - User Manual",
+            "Validate: Introduction An MCB is a safety device used in electrical systems",
+            "Validate: It protects circuits from: Overload Short circuit It automatically turns OFF"
+          ],
+          "expected_results": [
+            "Step completed: Validate: \u0000 MCB (Miniature Circuit Breaker) - User Manu",
+            "Step completed: Validate: Introduction An MCB is a safety device used i",
+            "Step completed: Validate: It protects circuits from: Overload Short cir"
+          ],
+          "priority": "Critical",
+          "acceptance_criteria": [
+            "Step completed: Validate: \u0000 MCB (Miniature Circuit Breaker) - User Manu",
+            "Step completed: Validate: Introduction An MCB is a safety device used i",
+            "Step completed: Validate: It protects circuits from: Overload Short cir",
+            "All verifications passed for: \u0000 MCB (Miniature Circuit Breaker) - User Manual 1."
+          ],
+          "final_result": "All verifications passed for: \u0000 MCB (Miniature Circuit Breaker) - User Manual 1."
+        },
+        {
+          "id": "ATC-002",
+          "test_type": "Commissioning",
+          "title": "It protects circuits from: Overload Short circuit It automatically turns OFF",
+          "method": "Manual Testing",
+          "description": "It protects circuits from: Overload Short circuit It automatically turns OFF when a fault occurs. 2. Main Parts of MCB Toggle Switch - Used to turn ON/OFF manually Trip Mechanism - Automatically trips during fault Terminals - For connecting wires Arc Chamber -",
+          "objective": "Validate It protects circuits from: Overload Short circuit It automatically turns OFF",
+          "preconditions": [],
+          "steps": [
+            "Validate: It protects circuits from: Overload Short circuit It automatically turns OFF when a fault occurs",
+            "Validate: Main Parts of MCB Toggle Switch - Used to turn ON/OFF manually Trip Mechanism - Automatically trips during fault Terminals - For connecting wires Arc Chamber -"
+          ],
+          "expected_results": [
+            "Step completed: Validate: It protects circuits from: Overload Short cir",
+            "Connection re-established successfully"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Validate: It protects circuits from: Overload Short cir",
+            "Connection re-established successfully",
+            "All verifications passed for: It protects circuits from: Overload Short circuit It automatically turns OFF"
+          ],
+          "final_result": "All verifications passed for: It protects circuits from: Overload Short circuit It automatically turns OFF"
+        },
+        {
+          "id": "ATC-003",
+          "test_type": "Commissioning",
+          "title": "Mechanism - Automatically trips during fault Terminals - For connecting wires",
+          "method": "Manual Testing",
+          "description": "Mechanism - Automatically trips during fault Terminals - For connecting wires Arc Chamber - Controls spark during switching 3. Working Principle When current is normal \u0000 MCB stays ON When overload or short circuit happens \u0000 MCB trips (turns OFF) This prevents damage to wires",
+          "objective": "Validate Mechanism - Automatically trips during fault Terminals - For connecting wires",
+          "preconditions": [],
+          "steps": [
+            "Validate: Mechanism - Automatically trips during fault Terminals - For connecting wires Arc Chamber - Controls spark during switching",
+            "Validate: Working Principle When current is normal \u0000 MCB stays ON When overload or short circuit happens \u0000 MCB trips (turns OFF) This prevents damage to wires"
+          ],
+          "expected_results": [
+            "Connection re-established successfully",
+            "Step completed: Validate: Working Principle When current is normal \u0000 MC"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Connection re-established successfully",
+            "Step completed: Validate: Working Principle When current is normal \u0000 MC",
+            "All verifications passed for: Mechanism - Automatically trips during fault Terminals - For connecting wires"
+          ],
+          "final_result": "All verifications passed for: Mechanism - Automatically trips during fault Terminals - For connecting wires"
+        },
+        {
+          "id": "ATC-004",
+          "test_type": "Commissioning",
+          "title": "When overload or short circuit happens \u0000 MCB trips (turns OFF) This prevents",
+          "method": "Manual Testing",
+          "description": "When overload or short circuit happens \u0000 MCB trips (turns OFF) This prevents damage to wires and devices 4. How to Use Turning ON Push the switch to UP (ON position) Turning OFF Push the switch to DOWN (OFF position) After Trip Identify the problem (overload or short circuit) Fix the",
+          "objective": "Validate When overload or short circuit happens \u0000 MCB trips (turns OFF) This prevents",
+          "preconditions": [],
+          "steps": [
+            "Verify condition: When overload or short circuit happens \u0000 MCB trips (turns OFF) This prevents damage to wires and devices",
+            "Validate: When overload or short circuit happens \u0000 MCB trips (turns OFF) This prevents damage to wires and devices",
+            "Validate: How to Use Turning ON Push the switch to UP (ON position) Turning OFF Push the switch to DOWN (OFF position) After Trip Identify the problem (overload or short circuit) Fix the"
+          ],
+          "expected_results": [
+            "Condition: When overload or short circuit happens \u0000 MCB trips (turns OFF) This prevents damage to wires and devices confirmed as expected",
+            "Step completed: Validate: When overload or short circuit happens \u0000 MCB",
+            "Step completed: Validate: How to Use Turning ON Push the switch to UP ("
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Condition: When overload or short circuit happens \u0000 MCB trips (turns OFF) This prevents damage to wires and devices confirmed as expected",
+            "Step completed: Validate: When overload or short circuit happens \u0000 MCB",
+            "Step completed: Validate: How to Use Turning ON Push the switch to UP (",
+            "All verifications passed for: When overload or short circuit happens \u0000 MCB trips (turns OFF) This prevents"
+          ],
+          "final_result": "All verifications passed for: When overload or short circuit happens \u0000 MCB trips (turns OFF) This prevents"
+        },
+        {
+          "id": "ATC-005",
+          "test_type": "Commissioning",
+          "title": "Switch to DOWN (OFF position) After Trip Identify the problem (overload or",
+          "method": "Manual Testing",
+          "description": "switch to DOWN (OFF position) After Trip Identify the problem (overload or short circuit) Fix the issue Reset MCB by switching it ON again 5. Installation Guidelines Install on distribution board (DB) Connect phase wire to input terminal Connect output to load Tighten connections properly",
+          "objective": "Validate Switch to DOWN (OFF position) After Trip Identify the problem (overload or",
+          "preconditions": [],
+          "steps": [
+            "Switch to DOWN (OFF position) After Trip Identify the problem (overload or short circuit) Fix the issue Reset MCB by switching it ON again",
+            "Validate: Installation Guidelines Install on distribution board (DB) Connect phase wire to input terminal Connect output to load Tighten connections properly"
+          ],
+          "expected_results": [
+            "Configuration applied correctly",
+            "Connection re-established successfully"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Configuration applied correctly",
+            "Connection re-established successfully",
+            "All verifications passed for: Switch to DOWN (OFF position) After Trip Identify the problem (overload or"
+          ],
+          "final_result": "All verifications passed for: Switch to DOWN (OFF position) After Trip Identify the problem (overload or"
+        }
+      ],
+      "tags": [
+        "auto_training",
+        "generation"
+      ],
+      "extracted_keywords": {
+        "performance": 7,
+        "ui": 8
+      },
+      "test_case_count": 5,
+      "created_at": "2026-03-29T12:07:05.728810"
+    },
+    {
+      "id": "EXP-0019",
+      "document_content": "EcoStruxure Panel Server Webpages Overview\nThe web server embedded in the EcoStruxure Panel Server provides webpages\nenabling you to commission electrical products and systems compatible with the\nEcoStruxure Panel Server in your switchboard.\nIn addition the webpages provide real-time data and active alarm visualization,\nand historical analysis from devices (depending on the model), for entry-level\nenergy and operation management.\nElectrical product and commissioning capabilities allow you to:\n\u2022 Discover wireless devices installed in the EcoStruxure Panel Server system\n(depending on the model).\n\u2022 Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel\nServer (depending on the model).\n\u2022 Configure I/O devices connected to the EcoStruxure Panel Server through\nthe digital inputs (depending on the model).\nEnergy and operation monitoring capabilities allow you to:\n\u2022 Visualize real-time data and events through a supported web browser.\n\u2022 Monitor and control connected devices.\n\u2022 Publish data to an SFTP or HTTPS server or to the Schneider Electric cloud.\n\u2022 Visualize trending on historical data, up to a period of 3 years (Advanced\nmodel).\n\u2022 Export selected logged data to your PC for additional analysis (Advanced\nmodel).\nFor more detailed information about the webpages, refer to Using EcoStruxure\nPanel Server Webpages, page 190.\nDOCA0172EN-19 33\nEcoStruxure Panel Server Webpages Overview EcoStruxure Panel Server\nEcoStruxure Power Commission (EPC) Software\nOverview\nEcoStruxure Power Commission is intelligent software that helps you set up, test,\nand commission the electrical products and systems in your switchboards with\nefficiency and ease. It also allows you to generate a dedicated QR code for the\nelectrical panel to enable digital collaboration with contractors and facility\nmanagers by sharing important documentation.\nKey Features\nEcoStruxure Power Commission software performs the following actions for the\nsupported devices :\n\u2022 Easy setup\n\u25e6 Discover all the smart d",
+      "test_cases": [
+        {
+          "id": "Panel Server-ATC-001",
+          "test_type": "Commissioning",
+          "title": "Digital collaboration",
+          "method": "Manual Testing",
+          "description": "Digital collaboration Create a unique QR code for the entire switchboard and then upload all relevant documentation including important CAD drawings, user guides, bill of materials, single-line diagrams, photos and more to Schneider Electric cloud repository. Simplify project handover with the digit",
+          "objective": "Validate Digital collaboration according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: Digital collaboration Create a unique QR code for the entire switchboard and then upload all relevant documentation including important CAD drawings, user guides, bill of materials, single-line diagrams, photos and more to Schneider Electric cloud repository",
+            "Validate: Simplify project handover with the digital logbook functionality, making it faster and easier for the facility manager to access historical information and collaborate with all project partners For more information, tutorials, and download link, visit the EcoStruxure Power Commission software webpage. 34 EcoStruxure Panel Server EcoStruxure Power Commission (EPC) Software EcoStruxure Power Commission Web Tool (EPC Web) Overview The EcoStruxure Power Commission Web tool is intended to help system integrators save time to execute their projects by offering the following actions so that you can cater to different customer requirements in terms of events or measurements of devices to be monitored:"
+          ],
+          "expected_results": [
+            "Step completed: Validate: Digital collaboration Create a unique QR code",
+            "Target page/screen is displayed"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Validate: Digital collaboration Create a unique QR code",
+            "Target page/screen is displayed",
+            "All verifications passed for: Digital collaboration"
+          ],
+          "final_result": "All verifications passed for: Digital collaboration"
+        },
+        {
+          "id": "Panel Server-ATC-002",
+          "test_type": "Commissioning",
+          "title": "Giving access to cloud connected gateways and devices to associate",
+          "method": "Manual Testing",
+          "description": "Giving access to cloud connected gateways and devices to associate required models. A custom device model in the EcoStruxure Power Commission Web tool contains the list of measurements, alarms, Modbus frames and events that can be used to monitor Modbus based devices in the field. The user can create, edit, view, and export device model data as per the requirement.",
+          "objective": "Validate Giving access to cloud connected gateways and devices to associate according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: Giving access to cloud connected gateways and devices to associate required models",
+            "Validate: A custom device model in the EcoStruxure Power Commission Web tool contains the list of measurements, alarms, Modbus frames and events that can be used to monitor Modbus based devices in the field",
+            "Validate: The user can create, edit, view, and export device model data as per the requirement",
+            "Verify that key Features The EcoStruxure Power Commission Web tool allows you to perform the following actions:"
+          ],
+          "expected_results": [
+            "Connection re-established successfully",
+            "Step completed: Validate: A custom device model in the EcoStruxure Powe",
+            "Step completed: Validate: The user can create, edit, view, and export d",
+            "Key Features The EcoStruxure Power Commission Web tool allows you to perform the following actions: confirmed as expected"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Connection re-established successfully",
+            "Step completed: Validate: A custom device model in the EcoStruxure Powe",
+            "Step completed: Validate: The user can create, edit, view, and export d",
+            "Key Features The EcoStruxure Power Commission Web tool allows you to perform the following actions: confirmed as expected",
+            "All verifications passed for: Giving access to cloud connected gateways and devices to associate"
+          ],
+          "final_result": "All verifications passed for: Giving access to cloud connected gateways and devices to associate"
+        }
+      ],
+      "tags": [
+        "auto_training",
+        "generation",
+        "prompted"
+      ],
+      "extracted_keywords": {
+        "api": 1,
+        "database": 5,
+        "ui": 2
+      },
+      "test_case_count": 2,
+      "created_at": "2026-03-29T12:08:33.519827"
+    },
+    {
+      "id": "EXP-0020",
+      "document_content": "EcoStruxure Panel Server Webpages Overview\nThe web server embedded in the EcoStruxure Panel Server provides webpages\nenabling you to commission electrical products and systems compatible with the\nEcoStruxure Panel Server in your switchboard.\nIn addition the webpages provide real-time data and active alarm visualization,\nand historical analysis from devices (depending on the model), for entry-level\nenergy and operation management.\nElectrical product and commissioning capabilities allow you to:\n\u2022 Discover wireless devices installed in the EcoStruxure Panel Server system\n(depending on the model).\n\u2022 Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel\nServer (depending on the model).\n\u2022 Configure I/O devices connected to the EcoStruxure Panel Server through\nthe digital inputs (depending on the model).\nEnergy and operation monitoring capabilities allow you to:\n\u2022 Visualize real-time data and events through a supported web browser.\n\u2022 Monitor and control connected devices.\n\u2022 Publish data to an SFTP or HTTPS server or to the Schneider Electric cloud.\n\u2022 Visualize trending on historical data, up to a period of 3 years (Advanced\nmodel).\n\u2022 Export selected logged data to your PC for additional analysis (Advanced\nmodel).\nFor more detailed information about the webpages, refer to Using EcoStruxure\nPanel Server Webpages, page 190.\nDOCA0172EN-19 33\nEcoStruxure Panel Server Webpages Overview EcoStruxure Panel Server\nEcoStruxure Power Commission (EPC) Software\nOverview\nEcoStruxure Power Commission is intelligent software that helps you set up, test,\nand commission the electrical products and systems in your switchboards with\nefficiency and ease. It also allows you to generate a dedicated QR code for the\nelectrical panel to enable digital collaboration with contractors and facility\nmanagers by sharing important documentation.\nKey Features\nEcoStruxure Power Commission software performs the following actions for the\nsupported devices :\n\u2022 Easy setup\n\u25e6 Discover all the smart d",
+      "test_cases": [
+        {
+          "id": "Panel Server-ATC-001",
+          "test_type": "Commissioning",
+          "title": "Digital collaboration",
+          "method": "Manual Testing",
+          "description": "Digital collaboration Create a unique QR code for the entire switchboard and then upload all relevant documentation including important CAD drawings, user guides, bill of materials, single-line diagrams, photos and more to Schneider Electric cloud repository. Simplify project handover with the digit",
+          "objective": "Validate Digital collaboration according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: Digital collaboration Create a unique QR code for the entire switchboard and then upload all relevant documentation including important CAD drawings, user guides, bill of materials, single-line diagrams, photos and more to Schneider Electric cloud repository",
+            "Validate: Simplify project handover with the digital logbook functionality, making it faster and easier for the facility manager to access historical information and collaborate with all project partners For more information, tutorials, and download link, visit the EcoStruxure Power Commission software webpage. 34 EcoStruxure Panel Server EcoStruxure Power Commission (EPC) Software EcoStruxure Power Commission Web Tool (EPC Web) Overview The EcoStruxure Power Commission Web tool is intended to help system integrators save time to execute their projects by offering the following actions so that you can cater to different customer requirements in terms of events or measurements of devices to be monitored:"
+          ],
+          "expected_results": [
+            "Step completed: Validate: Digital collaboration Create a unique QR code",
+            "Target page/screen is displayed"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Validate: Digital collaboration Create a unique QR code",
+            "Target page/screen is displayed",
+            "All verifications passed for: Digital collaboration"
+          ],
+          "final_result": "All verifications passed for: Digital collaboration"
+        },
+        {
+          "id": "Panel Server-ATC-002",
+          "test_type": "Commissioning",
+          "title": "Giving access to cloud connected gateways and devices to associate",
+          "method": "Manual Testing",
+          "description": "Giving access to cloud connected gateways and devices to associate required models. A custom device model in the EcoStruxure Power Commission Web tool contains the list of measurements, alarms, Modbus frames and events that can be used to monitor Modbus based devices in the field. The user can create, edit, view, and export device model data as per the requirement.",
+          "objective": "Validate Giving access to cloud connected gateways and devices to associate according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: Giving access to cloud connected gateways and devices to associate required models",
+            "Validate: A custom device model in the EcoStruxure Power Commission Web tool contains the list of measurements, alarms, Modbus frames and events that can be used to monitor Modbus based devices in the field",
+            "Validate: The user can create, edit, view, and export device model data as per the requirement",
+            "Verify that key Features The EcoStruxure Power Commission Web tool allows you to perform the following actions:"
+          ],
+          "expected_results": [
+            "Connection re-established successfully",
+            "Step completed: Validate: A custom device model in the EcoStruxure Powe",
+            "Step completed: Validate: The user can create, edit, view, and export d",
+            "Key Features The EcoStruxure Power Commission Web tool allows you to perform the following actions: confirmed as expected"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Connection re-established successfully",
+            "Step completed: Validate: A custom device model in the EcoStruxure Powe",
+            "Step completed: Validate: The user can create, edit, view, and export d",
+            "Key Features The EcoStruxure Power Commission Web tool allows you to perform the following actions: confirmed as expected",
+            "All verifications passed for: Giving access to cloud connected gateways and devices to associate"
+          ],
+          "final_result": "All verifications passed for: Giving access to cloud connected gateways and devices to associate"
+        },
+        {
+          "id": "Panel Server-ATC-003",
+          "test_type": "Commissioning",
+          "title": "View and Export Models: Select and export device models previously created",
+          "method": "Manual Testing",
+          "description": "View and Export Models: Select and export device models previously created by you or others so that they can be imported in EcoStruxure Panel Server. EcoStruxure Power Monitoring Expert is a complete, interoperable, and scalable software package for power management applications. The software collects and organizes data gathered from the electrical network and presents it as meaningful, actionable information through an intuitive Web interface.",
+          "objective": "Validate View and Export Models: Select and export device models previously created according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: View and Export Models: Select and export device models previously created by you or others so that they can be imported in EcoStruxure Panel Server",
+            "Validate: Detailed help and instructions for creating a device model are available in the EcoStruxure Power Commission Web tool at Help > Documentation",
+            "Verify that for more information, go to EcoStruxure Power Commission Web. 35 EcoStruxure Power Commission Web Tool (EPC Web) EcoStruxure Panel Server Edge Monitoring and Supervision Software EcoStruxure Power Monitoring Expert (PME) EcoStruxure Panel Server allows you to export the panel configuration (list of devices and communication addresses) into PME or EPO by using EcoStruxure Power Commission software, for setup efficiency",
+            "Validate: EcoStruxure Power Monitoring Expert is a complete, interoperable, and scalable software package for power management applications",
+            "Validate: The software collects and organizes data gathered from the electrical network and presents it as meaningful, actionable information through an intuitive Web interface",
+            "Verify that it allows you to share information with key stakeholders or across your entire operation to influence behavioral changes that can save you money",
+            "Verify that with rich data integration from connected devices, EcoStruxure Power Operation unique capabilities provide real-time situational awareness and offer a high-performance, cyber\u0002resilient solution for your specialized power network"
+          ],
+          "expected_results": [
+            "Step completed: Validate: View and Export Models: Select and export dev",
+            "Step completed: Validate: Detailed help and instructions for creating a",
+            "For more information, go to EcoStruxure Power Commission Web. 35 EcoStruxure Power Commission Web Tool (EPC Web) EcoStruxure Panel Server Edge Monitoring and Supervision Software EcoStruxure Power Monitoring Expert (PME) EcoStruxure Panel Server allows you to export the panel configuration (list of devices and communication addresses) into PME or EPO by using EcoStruxure Power Commission software, for setup efficiency confirmed as expected",
+            "Step completed: Validate: EcoStruxure Power Monitoring Expert is a comp",
+            "Step completed: Validate: The software collects and organizes data gath",
+            "It allows you to share information with key stakeholders or across your entire operation to influence behavioral changes that can save you money confirmed as expected"
+          ],
+          "priority": "Critical",
+          "acceptance_criteria": [
+            "Step completed: Validate: View and Export Models: Select and export dev",
+            "Step completed: Validate: Detailed help and instructions for creating a",
+            "For more information, go to EcoStruxure Power Commission Web. 35 EcoStruxure Power Commission Web Tool (EPC Web) EcoStruxure Panel Server Edge Monitoring and Supervision Software EcoStruxure Power Monitoring Expert (PME) EcoStruxure Panel Server allows you to export the panel configuration (list of devices and communication addresses) into PME or EPO by using EcoStruxure Power Commission software, for setup efficiency confirmed as expected",
+            "Step completed: Validate: EcoStruxure Power Monitoring Expert is a comp",
+            "All verifications passed for: View and Export Models: Select and export device models previously created"
+          ],
+          "final_result": "All verifications passed for: View and Export Models: Select and export device models previously created"
+        }
+      ],
+      "tags": [
+        "auto_training",
+        "generation",
+        "prompted"
+      ],
+      "extracted_keywords": {
+        "api": 1,
+        "database": 5,
+        "ui": 2
+      },
+      "test_case_count": 3,
+      "created_at": "2026-03-29T12:10:53.576528"
+    },
+    {
+      "id": "EXP-0021",
+      "document_content": "# System Features\n## User Management\nCreate user with role-based access and validate permission matrix.\n## Billing\nGenerate invoices and send payment reminders.\n## Audit\nLog every critical action with timestamp and actor.",
+      "test_cases": [
+        {
+          "id": "ATC-001",
+          "test_type": "Commissioning",
+          "title": "System Features",
+          "method": "Manual Testing",
+          "description": "Create user with role-based access and validate permission matrix.",
+          "objective": "Validate System Features according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Create user with role-based access and validate permission matrix"
+          ],
+          "expected_results": [
+            "Target page/screen is displayed"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Target page/screen is displayed",
+            "All verifications passed for: System Features"
+          ],
+          "final_result": "All verifications passed for: System Features"
+        }
+      ],
+      "tags": [
+        "auto_training",
+        "generation",
+        "prompted"
+      ],
+      "extracted_keywords": {
+        "security": 1
+      },
+      "test_case_count": 1,
+      "created_at": "2026-03-29T12:46:37.396848"
+    },
+    {
+      "id": "EXP-0022",
+      "document_content": "# System Features\n## User Management\nCreate user with role-based access and validate permission matrix.\n## Billing\nGenerate invoices and send payment reminders.\n## Audit\nLog every critical action with timestamp and actor.",
+      "test_cases": [
+        {
+          "id": "ATC-001",
+          "test_type": "Commissioning",
+          "title": "Create user with role-based access and validate permission matrix.",
+          "method": "Manual Testing",
+          "description": "Create user with role-based access and validate permission matrix.",
+          "objective": "Validate Create user with role-based access and validate permission matrix. according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Create user with role-based access and validate permission matrix"
+          ],
+          "expected_results": [
+            "Target page/screen is displayed"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Target page/screen is displayed",
+            "All verifications passed for: Create user with role-based access and validate permission matrix."
+          ],
+          "final_result": "All verifications passed for: Create user with role-based access and validate permission matrix."
+        }
+      ],
+      "tags": [
+        "auto_training",
+        "generation",
+        "prompted"
+      ],
+      "extracted_keywords": {
+        "security": 1
+      },
+      "test_case_count": 1,
+      "created_at": "2026-03-29T12:47:02.627891"
+    },
+    {
+      "id": "EXP-0023",
+      "document_content": "EcoStruxure Panel Server Webpages Overview\nThe web server embedded in the EcoStruxure Panel Server provides webpages\nenabling you to commission electrical products and systems compatible with the\nEcoStruxure Panel Server in your switchboard.\nIn addition the webpages provide real-time data and active alarm visualization,\nand historical analysis from devices (depending on the model), for entry-level\nenergy and operation management.\nElectrical product and commissioning capabilities allow you to:\n\u2022 Discover wireless devices installed in the EcoStruxure Panel Server system\n(depending on the model).\n\u2022 Discover Modbus-SL and Modbus TCP/IP devices from EcoStruxure Panel\nServer (depending on the model).\n\u2022 Configure I/O devices connected to the EcoStruxure Panel Server through\nthe digital inputs (depending on the model).\nEnergy and operation monitoring capabilities allow you to:\n\u2022 Visualize real-time data and events through a supported web browser.\n\u2022 Monitor and control connected devices.\n\u2022 Publish data to an SFTP or HTTPS server or to the Schneider Electric cloud.\n\u2022 Visualize trending on historical data, up to a period of 3 years (Advanced\nmodel).\n\u2022 Export selected logged data to your PC for additional analysis (Advanced\nmodel).\nFor more detailed information about the webpages, refer to Using EcoStruxure\nPanel Server Webpages, page 190.\nDOCA0172EN-19 33\nEcoStruxure Panel Server Webpages Overview EcoStruxure Panel Server\nEcoStruxure Power Commission (EPC) Software\nOverview\nEcoStruxure Power Commission is intelligent software that helps you set up, test,\nand commission the electrical products and systems in your switchboards with\nefficiency and ease. It also allows you to generate a dedicated QR code for the\nelectrical panel to enable digital collaboration with contractors and facility\nmanagers by sharing important documentation.\nKey Features\nEcoStruxure Power Commission software performs the following actions for the\nsupported devices :\n\u2022 Easy setup\n\u25e6 Discover all the smart d",
+      "test_cases": [
+        {
+          "id": "Panel Server-ATC-001",
+          "test_type": "Commissioning",
+          "title": "Giving access to cloud connected gateways and devices to associate",
+          "method": "Manual Testing",
+          "description": "Giving access to cloud connected gateways and devices to associate required models. A custom device model in the EcoStruxure Power Commission Web tool contains the list of measurements, alarms, Modbus frames and events that can be used to monitor Modbus based devices in the field. The user can create, edit, view, and export device model data as per the requirement.",
+          "objective": "Validate Giving access to cloud connected gateways and devices to associate according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: Giving access to cloud connected gateways and devices to associate required models",
+            "Validate: A custom device model in the EcoStruxure Power Commission Web tool contains the list of measurements, alarms, Modbus frames and events that can be used to monitor Modbus based devices in the field",
+            "Validate: The user can create, edit, view, and export device model data as per the requirement",
+            "Verify that key Features The EcoStruxure Power Commission Web tool allows you to perform the following actions:"
+          ],
+          "expected_results": [
+            "Connection re-established successfully",
+            "Step completed: Validate: A custom device model in the EcoStruxure Powe",
+            "Step completed: Validate: The user can create, edit, view, and export d",
+            "Key Features The EcoStruxure Power Commission Web tool allows you to perform the following actions: confirmed as expected"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Connection re-established successfully",
+            "Step completed: Validate: A custom device model in the EcoStruxure Powe",
+            "Step completed: Validate: The user can create, edit, view, and export d",
+            "Key Features The EcoStruxure Power Commission Web tool allows you to perform the following actions: confirmed as expected",
+            "All verifications passed for: Giving access to cloud connected gateways and devices to associate"
+          ],
+          "final_result": "All verifications passed for: Giving access to cloud connected gateways and devices to associate"
+        },
+        {
+          "id": "Panel Server-ATC-002",
+          "test_type": "Commissioning",
+          "title": "View and Export Models: Select and export device models previously created",
+          "method": "Manual Testing",
+          "description": "View and Export Models: Select and export device models previously created by you or others so that they can be imported in EcoStruxure Panel Server. EcoStruxure Power Monitoring Expert is a complete, interoperable, and scalable software package for power management applications. The software collects and organizes data gathered from the electrical network and presents it as meaningful, actionable information through an intuitive Web interface.",
+          "objective": "Validate View and Export Models: Select and export device models previously created according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: View and Export Models: Select and export device models previously created by you or others so that they can be imported in EcoStruxure Panel Server",
+            "Validate: Detailed help and instructions for creating a device model are available in the EcoStruxure Power Commission Web tool at Help > Documentation",
+            "Verify that for more information, go to EcoStruxure Power Commission Web. 35 EcoStruxure Power Commission Web Tool (EPC Web) EcoStruxure Panel Server Edge Monitoring and Supervision Software EcoStruxure Power Monitoring Expert (PME) EcoStruxure Panel Server allows you to export the panel configuration (list of devices and communication addresses) into PME or EPO by using EcoStruxure Power Commission software, for setup efficiency",
+            "Validate: EcoStruxure Power Monitoring Expert is a complete, interoperable, and scalable software package for power management applications",
+            "Validate: The software collects and organizes data gathered from the electrical network and presents it as meaningful, actionable information through an intuitive Web interface",
+            "Verify that it allows you to share information with key stakeholders or across your entire operation to influence behavioral changes that can save you money",
+            "Verify that with rich data integration from connected devices, EcoStruxure Power Operation unique capabilities provide real-time situational awareness and offer a high-performance, cyber\u0002resilient solution for your specialized power network"
+          ],
+          "expected_results": [
+            "Step completed: Validate: View and Export Models: Select and export dev",
+            "Step completed: Validate: Detailed help and instructions for creating a",
+            "For more information, go to EcoStruxure Power Commission Web. 35 EcoStruxure Power Commission Web Tool (EPC Web) EcoStruxure Panel Server Edge Monitoring and Supervision Software EcoStruxure Power Monitoring Expert (PME) EcoStruxure Panel Server allows you to export the panel configuration (list of devices and communication addresses) into PME or EPO by using EcoStruxure Power Commission software, for setup efficiency confirmed as expected",
+            "Step completed: Validate: EcoStruxure Power Monitoring Expert is a comp",
+            "Step completed: Validate: The software collects and organizes data gath",
+            "It allows you to share information with key stakeholders or across your entire operation to influence behavioral changes that can save you money confirmed as expected"
+          ],
+          "priority": "Critical",
+          "acceptance_criteria": [
+            "Step completed: Validate: View and Export Models: Select and export dev",
+            "Step completed: Validate: Detailed help and instructions for creating a",
+            "For more information, go to EcoStruxure Power Commission Web. 35 EcoStruxure Power Commission Web Tool (EPC Web) EcoStruxure Panel Server Edge Monitoring and Supervision Software EcoStruxure Power Monitoring Expert (PME) EcoStruxure Panel Server allows you to export the panel configuration (list of devices and communication addresses) into PME or EPO by using EcoStruxure Power Commission software, for setup efficiency confirmed as expected",
+            "Step completed: Validate: EcoStruxure Power Monitoring Expert is a comp",
+            "All verifications passed for: View and Export Models: Select and export device models previously created"
+          ],
+          "final_result": "All verifications passed for: View and Export Models: Select and export device models previously created"
+        },
+        {
+          "id": "Panel Server-ATC-003",
+          "test_type": "Commissioning",
+          "title": "Digital collaboration Create a unique QR code for the entire switchboard and",
+          "method": "Manual Testing",
+          "description": "Digital collaboration Create a unique QR code for the entire switchboard and then upload all relevant documentation including important CAD drawings, user guides, bill of materials, single-line diagrams, photos and more to Schneider Electric cloud repository. Simplify project handover with the digit",
+          "objective": "Validate Digital collaboration Create a unique QR code for the entire switchboard and according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: Digital collaboration Create a unique QR code for the entire switchboard and then upload all relevant documentation including important CAD drawings, user guides, bill of materials, single-line diagrams, photos and more to Schneider Electric cloud repository",
+            "Validate: Simplify project handover with the digital logbook functionality, making it faster and easier for the facility manager to access historical information and collaborate with all project partners For more information, tutorials, and download link, visit the EcoStruxure Power Commission software webpage. 34 EcoStruxure Panel Server EcoStruxure Power Commission (EPC) Software EcoStruxure Power Commission Web Tool (EPC Web) Overview The EcoStruxure Power Commission Web tool is intended to help system integrators save time to execute their projects by offering the following actions so that you can cater to different customer requirements in terms of events or measurements of devices to be monitored:"
+          ],
+          "expected_results": [
+            "Step completed: Validate: Digital collaboration Create a unique QR code",
+            "Target page/screen is displayed"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Validate: Digital collaboration Create a unique QR code",
+            "Target page/screen is displayed",
+            "All verifications passed for: Digital collaboration Create a unique QR code for the entire switchboard and"
+          ],
+          "final_result": "All verifications passed for: Digital collaboration Create a unique QR code for the entire switchboard and"
+        },
+        {
+          "id": "Panel Server-ATC-004",
+          "test_type": "Commissioning",
+          "title": "Export selected logged data to your PC for additional analysis (Advanced",
+          "method": "Manual Testing",
+          "description": "Export selected logged data to your PC for additional analysis (Advanced model). Key Features EcoStruxure Power Commission software performs the following actions for the supported devices :",
+          "objective": "Validate Export selected logged data to your PC for additional analysis (Advanced according to the requested prompt focus",
+          "preconditions": [],
+          "steps": [
+            "Validate: Export selected logged data to your PC for additional analysis (Advanced model)",
+            "Validate: For more detailed information about the webpages, refer to Using EcoStruxure Panel Server Webpages, . 33 EcoStruxure Panel Server Webpages Overview EcoStruxure Panel Server EcoStruxure Power Commission (EPC) Software Overview EcoStruxure Power Commission is intelligent software that helps you set up, test, and commission the electrical products and systems in your switchboards with efficiency and ease",
+            "Verify that it also allows you to generate a dedicated QR code for the electrical panel to enable digital collaboration with contractors and facility managers by sharing important documentation",
+            "Validate: Key Features EcoStruxure Power Commission software performs the following actions for the supported devices :"
+          ],
+          "expected_results": [
+            "Step completed: Validate: Export selected logged data to your PC for ad",
+            "Configuration applied correctly",
+            "It also allows you to generate a dedicated QR code for the electrical panel to enable digital collaboration with contractors and facility managers by sharing important documentation confirmed as expected",
+            "Step completed: Validate: Key Features EcoStruxure Power Commission sof"
+          ],
+          "priority": "High",
+          "acceptance_criteria": [
+            "Step completed: Validate: Export selected logged data to your PC for ad",
+            "Configuration applied correctly",
+            "It also allows you to generate a dedicated QR code for the electrical panel to enable digital collaboration with contractors and facility managers by sharing important documentation confirmed as expected",
+            "Step completed: Validate: Key Features EcoStruxure Power Commission sof",
+            "All verifications passed for: Export selected logged data to your PC for additional analysis (Advanced"
+          ],
+          "final_result": "All verifications passed for: Export selected logged data to your PC for additional analysis (Advanced"
+        }
+      ],
+      "tags": [
+        "auto_training",
+        "generation",
+        "prompted"
+      ],
+      "extracted_keywords": {
+        "api": 1,
+        "database": 5,
+        "ui": 2
+      },
+      "test_case_count": 4,
+      "created_at": "2026-03-29T12:48:15.952694"
     }
   ],
   "learned_patterns": [
@@ -750,59 +1752,81 @@
     {
       "category": "security",
       "test_case_types": {
-        "Commissioning": 2
+        "Commissioning": 4
       },
-      "frequency": 2,
+      "frequency": 4,
       "examples": [
         "EXP-0006",
-        "EXP-0010"
+        "EXP-0010",
+        "EXP-0021",
+        "EXP-0022"
       ]
     },
     {
       "category": "database",
       "test_case_types": {
-        "Commissioning": 6
+        "Commissioning": 29
       },
-      "frequency": 3,
+      "frequency": 9,
       "examples": [
         "EXP-0002",
         "EXP-0008",
-        "EXP-0012"
+        "EXP-0012",
+        "EXP-0013",
+        "EXP-0015",
+        "EXP-0016",
+        "EXP-0019",
+        "EXP-0020",
+        "EXP-0023"
       ]
     },
     {
       "category": "ui",
       "test_case_types": {
-        "Commissioning": 7
+        "Commissioning": 35
       },
-      "frequency": 4,
+      "frequency": 11,
       "examples": [
         "EXP-0003",
         "EXP-0006",
         "EXP-0011",
-        "EXP-0012"
+        "EXP-0012",
+        "EXP-0013",
+        "EXP-0015",
+        "EXP-0016",
+        "EXP-0018",
+        "EXP-0019",
+        "EXP-0020",
+        "EXP-0023"
       ]
     },
     {
       "category": "performance",
       "test_case_types": {
-        "Commissioning": 1
+        "Commissioning": 6
       },
-      "frequency": 1,
+      "frequency": 2,
       "examples": [
-        "EXP-0009"
+        "EXP-0009",
+        "EXP-0018"
       ]
     },
     {
       "category": "api",
       "test_case_types": {
-        "Commissioning": 4
+        "Commissioning": 27
       },
-      "frequency": 1,
+      "frequency": 7,
       "examples": [
-        "EXP-0012"
+        "EXP-0012",
+        "EXP-0013",
+        "EXP-0015",
+        "EXP-0016",
+        "EXP-0019",
+        "EXP-0020",
+        "EXP-0023"
       ]
     }
   ],
-  "last_updated": "2026-03-26T15:49:09.797810"
+  "last_updated": "2026-03-29T12:48:15.952694"
 }
